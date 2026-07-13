@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Астролог Айнура Батталова — Управление Судьбой. Натальные карты, прогнозы, финансовые консультации. Онлайн-консультации через Telegram и ВКонтакте.">
-<meta name="keywords" content="астролог, натальная карта, прогноз, гороскоп, консультация астролога, Айнура Батталова, Управление Судьбой">
-<meta property="og:title" content="Управление Судьбой — Айнура Батталова · Астролог">
+<meta name="description" content="Астролог Айнура — Управление Судьбой. Натальные карты, прогнозы, финансовые консультации. Онлайн-консультации через Telegram и ВКонтакте.">
+<meta name="keywords" content="астролог, натальная карта, прогноз, гороскоп, консультация астролога, Айнура, Управление Судьбой">
+<meta property="og:title" content="Управление Судьбой — Айнура · Астролог">
 <meta property="og:description" content="Раскройте тайны своей судьбы через звёзды. Профессиональные астрологические консультации онлайн.">
 <meta property="og:type" content="website">
-<title>Управление Судьбой — Айнура Батталова · Астролог</title>
+<title>Управление Судьбой — Айнура · Астролог</title>
 
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
@@ -97,7 +97,6 @@
     pointer-events: none;
   }
 
-  /* Звёзды */
   .star {
     position: absolute;
     background: white;
@@ -105,7 +104,6 @@
     pointer-events: none;
   }
 
-  /* Gold glow */
   .gold-glow {
     box-shadow: 0 0 20px rgba(212, 175, 55, 0.3), 0 0 40px rgba(212, 175, 55, 0.1);
     transition: box-shadow 0.3s ease, transform 0.3s ease;
@@ -114,7 +112,6 @@
     box-shadow: 0 0 30px rgba(212, 175, 55, 0.6), 0 0 60px rgba(212, 175, 55, 0.2);
   }
 
-  /* Glassmorphism */
   .glass {
     background: rgba(31, 27, 61, 0.4);
     backdrop-filter: blur(16px);
@@ -127,18 +124,15 @@
     box-shadow: 0 8px 32px rgba(212, 175, 55, 0.15);
   }
 
-  /* Золотая линия */
   .gold-divider {
     background: linear-gradient(90deg, transparent, #d4af37, transparent);
     height: 1px;
   }
 
-  /* Скролл-бар */
   ::-webkit-scrollbar { width: 8px; }
   ::-webkit-scrollbar-track { background: #0a0a1f; }
   ::-webkit-scrollbar-thumb { background: #d4af37; border-radius: 4px; }
 
-  /* FAQ */
   .faq-answer {
     max-height: 0;
     overflow: hidden;
@@ -156,19 +150,16 @@
   .faq-icon { transition: transform 0.3s ease; }
   .faq-item.open .faq-icon { transform: rotate(45deg); }
 
-  /* Constellation pattern */
   .constellation-bg {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Cg fill='none' stroke='%23d4af37' stroke-width='0.5' opacity='0.15'%3E%3Ccircle cx='50' cy='80' r='1.5' fill='%23d4af37'/%3E%3Ccircle cx='120' cy='50' r='1.5' fill='%23d4af37'/%3E%3Ccircle cx='180' cy='110' r='1.5' fill='%23d4af37'/%3E%3Ccircle cx='280' cy='70' r='1.5' fill='%23d4af37'/%3E%3Ccircle cx='340' cy='150' r='1.5' fill='%23d4af37'/%3E%3Ccircle cx='90' cy='220' r='1.5' fill='%23d4af37'/%3E%3Ccircle cx='200' cy='250' r='1.5' fill='%23d4af37'/%3E%3Ccircle cx='310' cy='280' r='1.5' fill='%23d4af37'/%3E%3Ccircle cx='60' cy='340' r='1.5' fill='%23d4af37'/%3E%3Ccircle cx='180' cy='360' r='1.5' fill='%23d4af37'/%3E%3Cline x1='50' y1='80' x2='120' y2='50'/%3E%3Cline x1='120' y1='50' x2='180' y2='110'/%3E%3Cline x1='180' y1='110' x2='280' y2='70'/%3E%3Cline x1='280' y1='70' x2='340' y2='150'/%3E%3Cline x1='90' y1='220' x2='200' y2='250'/%3E%3Cline x1='200' y1='250' x2='310' y2='280'/%3E%3Cline x1='60' y1='340' x2='180' y2='360'/%3E%3Cline x1='180' y1='110' x2='200' y2='250'/%3E%3C/g%3E%3C/svg%3E");
   }
 
-  /* Мобильное меню */
   .mobile-menu {
     transform: translateX(100%);
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
   .mobile-menu.open { transform: translateX(0); }
 
-  /* Scroll reveal */
   .reveal {
     opacity: 0;
     transform: translateY(30px);
@@ -179,7 +170,6 @@
     transform: translateY(0);
   }
 
-  /* Service card hover */
   .service-card {
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
@@ -188,10 +178,8 @@
     border-color: rgba(212, 175, 55, 0.6);
   }
 
-  /* Selection */
   ::selection { background: #d4af37; color: #0a0a1f; }
 
-  /* Zodiac ring */
   @keyframes rotateZodiac {
     from { transform: translate(-50%, -50%) rotate(0deg); }
     to { transform: translate(-50%, -50%) rotate(360deg); }
@@ -207,7 +195,7 @@
     to { transform: rotate(-360deg); }
   }
 
-  /* Social buttons */
+  /* Социальные кнопки */
   .social-btn {
     display: flex;
     flex-direction: column;
@@ -245,7 +233,6 @@
   .social-label { font-size: 20px; font-weight: 600; margin-bottom: 4px; position: relative; z-index: 1; letter-spacing: 0.5px; }
   .social-sublabel { font-size: 14px; opacity: 0.9; position: relative; z-index: 1; font-weight: 300; }
 
-  /* Process connector */
   @media (min-width: 1024px) {
     .process-line::before {
       content: '';
@@ -259,7 +246,6 @@
     }
   }
 
-  /* Badge pulse */
   @keyframes badgePulse {
     0%, 100% { transform: scale(1); }
     50% { transform: scale(1.05); }
@@ -351,7 +337,6 @@
     </div>
 
     <div class="container mx-auto px-4 md:px-8 text-center max-w-5xl relative">
-      <!-- Top moon symbol -->
       <div class="mb-8 inline-block" style="filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.6));">
         <svg class="w-16 h-16 md:w-20 md:h-20 text-mystic-gold" viewBox="0 0 100 100">
           <path d="M 70,15 A 40,40 0 1,0 70,85 A 30,30 0 1,1 70,15 Z" fill="currentColor"/>
@@ -359,7 +344,7 @@
       </div>
 
       <p class="font-mystic text-mystic-gold text-xs md:text-sm tracking-mystic mb-6">
-        ✦ АСТРОЛОГИЧЕСКИЕ КОНСУЛЬТАЦИИ · АЙНУРА БАТТАЛОВА ✦
+        ✦ АСТРОЛОГИЧЕСКИЕ КОНСУЛЬТАЦИИ · АЙНУРА ✦
       </p>
 
       <h1 class="font-display italic text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-parchment leading-[1.05] mb-6">
@@ -372,7 +357,7 @@
       </p>
 
       <p class="text-sm md:text-base text-mystic-gold/80 font-mystic tracking-widest mb-10">
-        500+ консультаций · Западный и ведический подход
+        500+ консультаций · Классическая западная астрология
       </p>
 
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
@@ -407,10 +392,8 @@
       </div>
 
       <div class="grid md:grid-cols-[45%_55%] gap-12 md:gap-16 items-center">
-        <!-- Аватар -->
         <div class="relative max-w-sm mx-auto w-full reveal">
           <div class="relative aspect-square">
-            <!-- Zodiac ring -->
             <div class="absolute inset-0 zodiac-ring pointer-events-none">
               <svg class="w-full h-full" viewBox="0 0 400 400">
                 <circle cx="200" cy="200" r="195" fill="none" stroke="#d4af37" stroke-width="0.5" opacity="0.3" stroke-dasharray="2 4"/>
@@ -430,16 +413,14 @@
               <span class="absolute top-1/2 right-[25%] -translate-y-1/2 text-mystic-gold text-sm opacity-60">♓</span>
             </div>
 
-            <!-- Аватар -->
             <div class="absolute inset-8 rounded-full bg-gradient-avatar flex items-center justify-center gold-glow border-2 border-mystic-gold/60">
-              <span class="font-mystic text-6xl md:text-7xl text-mystic-gold tracking-wider">АБ</span>
+              <span class="font-mystic text-6xl md:text-7xl text-mystic-gold tracking-wider">А</span>
             </div>
           </div>
         </div>
 
-        <!-- Инфо -->
         <div class="reveal">
-          <h3 class="font-display italic text-3xl md:text-4xl text-mystic-gold mb-3">Айнура Батталова</h3>
+          <h3 class="font-display italic text-3xl md:text-4xl text-mystic-gold mb-3">Айнура</h3>
           <p class="text-soft-violet text-sm md:text-base mb-6 font-medium tracking-wide">
             Профессиональный астролог · Создатель проекта «Управление Судьбой»
           </p>
@@ -449,7 +430,7 @@
               Мой путь в астрологию начался с глубокого изучения собственной натальной карты и желания понять законы, по которым движется наша жизнь. То, что я увидела в расположении планет в момент своего рождения, перевернуло представление о себе и своём предназначении.
             </p>
             <p>
-              Я соединяю классическую западную астрологию с ведической традицией, чтобы дать клиентам целостную картину их потенциала и жизненных циклов. Такой синтез позволяет видеть не только поверхностные тенденции, но и глубинные кармические задачи, стоящие перед человеком.
+              Я работаю в традиции классической западной астрологии, чтобы дать клиентам целостную картину их потенциала и жизненных циклов. Такой подход позволяет видеть не только поверхностные тенденции, но и глубинные кармические задачи, стоящие перед человеком.
             </p>
           </div>
 
@@ -457,10 +438,6 @@
             <li class="flex items-start gap-3 text-sm md:text-base text-parchment/85">
               <span class="text-mystic-gold flex-shrink-0 mt-0.5">✦</span>
               <span>Школа классической астрологии</span>
-            </li>
-            <li class="flex items-start gap-3 text-sm md:text-base text-parchment/85">
-              <span class="text-mystic-gold flex-shrink-0 mt-0.5">✦</span>
-              <span>Профессиональное обучение ведической астрологии (Джйотиш)</span>
             </li>
             <li class="flex items-start gap-3 text-sm md:text-base text-parchment/85">
               <span class="text-mystic-gold flex-shrink-0 mt-0.5">✦</span>
@@ -529,7 +506,7 @@
           </a>
         </article>
 
-        <!-- Карточка 2: Любой вопрос (POPULAR) -->
+        <!-- Карточка 2: Любой вопрос -->
         <article class="service-card glass rounded-2xl p-6 md:p-8 relative reveal">
           <span class="badge-popular absolute -top-3 left-6 px-4 py-1 bg-soft-violet text-white text-xs font-mystic tracking-widest rounded-full">
             ПОПУЛЯРНОЕ
@@ -547,13 +524,13 @@
           <ul class="space-y-2 mb-6 text-sm text-parchment/80">
             <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> 1 глубокий вопрос</li>
             <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> Анализ нескольких аспектов</li>
-            <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> 60-минутная онлайн-консультация</li>
-            <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> Аудиозапись разговора</li>
+            <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> Подробная онлайн-переписка</li>
+            <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> Сохранение всей переписки у вас</li>
           </ul>
           <div class="flex items-end justify-between mb-5">
             <div>
               <div class="font-display font-bold text-4xl text-mystic-gold">3 000 ₽</div>
-              <div class="text-xs text-parchment/50 font-mystic tracking-widest mt-1">ДЛИТЕЛЬНОСТЬ: 60 МИН</div>
+              <div class="text-xs text-parchment/50 font-mystic tracking-widest mt-1">ОНЛАЙН-ПЕРЕПИСКА</div>
             </div>
           </div>
           <a href="#contact" data-service="Любой вопрос" class="service-order block text-center px-6 py-3 bg-mystic-gold text-cosmos rounded-full font-semibold hover:bg-mystic-gold-light transition-all duration-300 gold-glow">
@@ -577,13 +554,13 @@
             <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> Анализ натальной карты ребёнка</li>
             <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> Совместимость с родителями</li>
             <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> Рекомендации по воспитанию</li>
-            <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> Письменный отчёт (PDF, 15 стр.)</li>
-            <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> 90-минутная консультация</li>
+            <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> Письменный отчёт (15 страниц)</li>
+            <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> Подробная онлайн-переписка</li>
           </ul>
           <div class="flex items-end justify-between mb-5">
             <div>
               <div class="font-display font-bold text-4xl text-mystic-gold">3 000 ₽</div>
-              <div class="text-xs text-parchment/50 font-mystic tracking-widest mt-1">ДЛИТЕЛЬНОСТЬ: 90 МИН</div>
+              <div class="text-xs text-parchment/50 font-mystic tracking-widest mt-1">ОНЛАЙН-ПЕРЕПИСКА</div>
             </div>
           </div>
           <a href="#contact" data-service="Детский гороскоп" class="service-order block text-center px-6 py-3 border border-mystic-gold/60 text-mystic-gold rounded-full font-medium hover:bg-mystic-gold hover:text-cosmos transition-all duration-300">
@@ -608,12 +585,12 @@
             <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> Помесячный прогноз</li>
             <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> Благоприятные и сложные периоды</li>
             <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> Рекомендации по действиям</li>
-            <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> PDF-отчёт (25 страниц)</li>
+            <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> Отчёт (25 страниц)</li>
           </ul>
           <div class="flex items-end justify-between mb-5">
             <div>
               <div class="font-display font-bold text-4xl text-mystic-gold">3 000 ₽</div>
-              <div class="text-xs text-parchment/50 font-mystic tracking-widest mt-1">ДЛИТЕЛЬНОСТЬ: 90 МИН</div>
+              <div class="text-xs text-parchment/50 font-mystic tracking-widest mt-1">ОНЛАЙН-ПЕРЕПИСКА</div>
             </div>
           </div>
           <a href="#contact" data-service="Прогноз на год" class="service-order block text-center px-6 py-3 border border-mystic-gold/60 text-mystic-gold rounded-full font-medium hover:bg-mystic-gold hover:text-cosmos transition-all duration-300">
@@ -621,7 +598,7 @@
           </a>
         </article>
 
-        <!-- Карточка 5: Финансы -->
+        <!-- Карточка 5: Финансы и капитал -->
         <article class="service-card glass rounded-2xl p-6 md:p-8 relative reveal">
           <span class="absolute -top-3 left-6 px-4 py-1 bg-gradient-gold text-cosmos text-xs font-mystic tracking-widest rounded-full">
             ДЛЯ БИЗНЕСА
@@ -640,13 +617,13 @@
             <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> Анализ 2-го и 8-го домов</li>
             <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> Юпитер и Венера в карте</li>
             <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> Лучшие периоды для сделок</li>
-            <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> Совместимость с партнёрами</li>
-            <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> PDF-отчёт + консультация</li>
+            <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> Совместимость с бизнес-партнёрами</li>
+            <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> Отчёт + консультация в переписке</li>
           </ul>
           <div class="flex items-end justify-between mb-5">
             <div>
               <div class="font-display font-bold text-4xl text-mystic-gold">3 000 ₽</div>
-              <div class="text-xs text-parchment/50 font-mystic tracking-widest mt-1">ДЛИТЕЛЬНОСТЬ: 90 МИН</div>
+              <div class="text-xs text-parchment/50 font-mystic tracking-widest mt-1">ОНЛАЙН-ПЕРЕПИСКА</div>
             </div>
           </div>
           <a href="#contact" data-service="Финансы и капитал" class="service-order block text-center px-6 py-3 border border-mystic-gold/60 text-mystic-gold rounded-full font-medium hover:bg-mystic-gold hover:text-cosmos transition-all duration-300">
@@ -684,13 +661,13 @@
             <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> 12 домов гороскопа</li>
             <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> Кармические задачи (Лилит, Узлы)</li>
             <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> Синастрия с партнёром (бонус)</li>
-            <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> PDF-отчёт (30+ страниц)</li>
-            <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> 120-минутная консультация</li>
+            <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> Отчёт (30+ страниц)</li>
+            <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> Подробная онлайн-переписка</li>
           </ul>
           <div class="flex items-end justify-between mb-5">
             <div>
               <div class="font-display font-bold text-4xl text-mystic-gold">3 000 ₽</div>
-              <div class="text-xs text-parchment/50 font-mystic tracking-widest mt-1">ДЛИТЕЛЬНОСТЬ: 120 МИН</div>
+              <div class="text-xs text-parchment/50 font-mystic tracking-widest mt-1">ОНЛАЙН-ПЕРЕПИСКА</div>
             </div>
           </div>
           <a href="#contact" data-service="Натальная карта" class="service-order block text-center px-6 py-3 border border-mystic-gold/60 text-mystic-gold rounded-full font-medium hover:bg-mystic-gold hover:text-cosmos transition-all duration-300">
@@ -742,7 +719,7 @@
             </div>
             <h3 class="font-display text-xl md:text-2xl text-parchment mb-2">Расчёт карты</h3>
             <p class="text-parchment/70 text-sm leading-relaxed">
-              Я строю вашу натальную карту в профессиональной программе. Вы присылаете дату, время и место рождения.
+              Я строю вашу натальную карту в профессиональной программе и провожу глубокий анализ. Вы присылаете дату, время и место рождения.
             </p>
           </div>
 
@@ -750,12 +727,13 @@
             <div class="font-mystic text-5xl text-mystic-gold mb-4">III</div>
             <div class="w-14 h-14 rounded-full bg-mystic-gold/10 border border-mystic-gold/40 flex items-center justify-center mx-auto mb-4">
               <svg class="w-7 h-7 text-mystic-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M12 2l2 6 6 1-4.5 4 1 6-4.5-3-4.5 3 1-6L4 9l6-1z"/>
+                <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/>
+                <path d="M7 9h10M7 13h6" stroke-linecap="round"/>
               </svg>
             </div>
-            <h3 class="font-display text-xl md:text-2xl text-parchment mb-2">Онлайн-встреча</h3>
+            <h3 class="font-display text-xl md:text-2xl text-parchment mb-2">Онлайн-переписка</h3>
             <p class="text-parchment/70 text-sm leading-relaxed">
-              Созваниваемся в Zoom или Telegram. Я рассказываю, отвечаю на вопросы, даю практические рекомендации.
+              Списываемся в Telegram или WhatsApp. Я подробно рассказываю о вашей карте, отвечаю на все вопросы, даю практические рекомендации. Вся переписка остаётся у вас.
             </p>
           </div>
 
@@ -768,7 +746,7 @@
                 <path d="M8 12h8M8 16h6"/>
               </svg>
             </div>
-            <h3 class="font-display text-xl md:text-2xl text-parchment mb-2">PDF-отчёт</h3>
+            <h3 class="font-display text-xl md:text-2xl text-parchment mb-2">Отчёт</h3>
             <p class="text-parchment/70 text-sm leading-relaxed">
               В течение 3 дней вы получаете подробный письменный отчёт со всеми выводами и рекомендациями.
             </p>
@@ -886,7 +864,6 @@
        БЛОК "СВЯЗЬ" — ГЛАВНЫЙ CTA
        ============================================ -->
   <section id="contact" class="py-20 md:py-28 relative overflow-hidden">
-    <!-- Декоративные знаки зодиака -->
     <div class="absolute top-10 left-10 text-mystic-gold/20 text-4xl hidden md:block">♈</div>
     <div class="absolute top-10 right-10 text-mystic-gold/20 text-4xl hidden md:block">♎</div>
     <div class="absolute bottom-10 left-10 text-mystic-gold/20 text-4xl hidden md:block">♋</div>
@@ -904,7 +881,6 @@
         <div class="w-24 h-px bg-mystic-gold mx-auto mt-6"></div>
       </div>
 
-      <!-- Три большие кнопки-ссылки -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6 justify-items-center reveal">
 
         <!-- Telegram -->
@@ -936,7 +912,6 @@
 
       </div>
 
-      <!-- Дополнительная информация -->
       <div class="mt-10 text-center reveal">
         <div class="inline-flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 px-6 py-4 glass rounded-2xl">
           <a href="tel:+79062693247" class="flex items-center gap-2 text-parchment hover:text-mystic-gold transition-colors">
@@ -999,7 +974,7 @@
             <span class="faq-icon text-mystic-gold text-2xl leading-none flex-shrink-0">+</span>
           </div>
           <div class="faq-answer text-parchment/80 text-sm md:text-base leading-relaxed">
-            Онлайн через Zoom или Telegram-видео. Длительность зависит от услуги (от 30 минут до 2 часов). Я заранее изучаю вашу карту, во время встречи рассказываю и отвечаю на вопросы. Аудиозапись остаётся у вас.
+            Онлайн через переписку в Telegram или WhatsApp. Я заранее изучаю вашу карту, затем подробно рассказываю о ней в переписке, отвечаю на все ваши вопросы и даю практические рекомендации. Вся переписка остаётся у вас — можно вернуться к ней в любой момент.
           </div>
         </div>
 
@@ -1009,7 +984,7 @@
             <span class="faq-icon text-mystic-gold text-2xl leading-none flex-shrink-0">+</span>
           </div>
           <div class="faq-answer text-parchment/80 text-sm md:text-base leading-relaxed">
-            Да! Оформляю подарочные сертификаты. Сертификат действителен 6 месяцев. Укажите в сообщении «Хочу подарочный сертификат» — пришлю красивый PDF.
+            Да! Оформляю подарочные сертификаты. Сертификат действителен 6 месяцев. Укажите в сообщении «Хочу подарочный сертификат» — пришлю красиво оформленный сертификат в электронном виде.
           </div>
         </div>
 
@@ -1054,10 +1029,10 @@
           <span class="font-mystic text-mystic-gold text-sm tracking-mystic">УПРАВЛЕНИЕ СУДЬБОЙ</span>
         </div>
         <p class="font-display italic text-parchment/80 text-base">
-          Айнура Батталова · путь к себе через звёзды
+          Айнура · путь к себе через звёзды
         </p>
         <p class="text-parchment/50 text-sm mt-4 leading-relaxed">
-          Профессиональные астрологические консультации онлайн. Более 500 клиентов, западный и ведический подход.
+          Профессиональные астрологические консультации онлайн. Более 500 клиентов, классическая западная астрология.
         </p>
       </div>
 
@@ -1083,14 +1058,13 @@
       </div>
     </div>
 
-    <!-- Zodiac row -->
     <div class="flex justify-center items-center gap-3 md:gap-5 text-mystic-gold/30 text-lg md:text-xl mb-6">
       <span>♈</span><span>♉</span><span>♊</span><span>♋</span><span>♌</span><span>♍</span>
       <span>♎</span><span>♏</span><span>♐</span><span>♑</span><span>♒</span><span>♓</span>
     </div>
 
     <div class="text-center text-xs text-parchment/40 space-y-2">
-      <p>© 2024 «Управление Судьбой» · Айнура Батталова. Все права защищены.</p>
+      <p>© 2024 «Управление Судьбой» · Айнура. Все права защищены.</p>
       <p class="italic">Астрологические консультации не заменяют медицинскую, юридическую или финансовую помощь специалиста.</p>
     </div>
   </div>
@@ -1103,9 +1077,7 @@
 (function() {
   'use strict';
 
-  // ==========================================
-  // 1. Генератор звёзд (120 штук)
-  // ==========================================
+  // 1. Генератор звёзд
   const starsContainer = document.getElementById('stars-container');
   const STAR_COUNT = 120;
   const fragment = document.createDocumentFragment();
@@ -1126,9 +1098,7 @@
   }
   starsContainer.appendChild(fragment);
 
-  // ==========================================
-  // 2. Navbar scroll effect
-  // ==========================================
+  // 2. Navbar scroll
   const navbar = document.getElementById('navbar');
   const handleScroll = () => {
     if (window.scrollY > 50) {
@@ -1140,9 +1110,7 @@
   window.addEventListener('scroll', handleScroll, { passive: true });
   handleScroll();
 
-  // ==========================================
   // 3. Mobile menu
-  // ==========================================
   const burger = document.getElementById('burger');
   const mobileMenu = document.getElementById('mobile-menu');
   const closeMenu = document.getElementById('close-menu');
@@ -1153,9 +1121,7 @@
     link.addEventListener('click', () => mobileMenu.classList.remove('open'));
   });
 
-  // ==========================================
   // 4. FAQ accordion
-  // ==========================================
   document.querySelectorAll('.faq-item').forEach(item => {
     const question = item.querySelector('.faq-question');
     question.addEventListener('click', () => {
@@ -1165,9 +1131,7 @@
     });
   });
 
-  // ==========================================
   // 5. Smooth scroll
-  // ==========================================
   document.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener('click', function(e) {
       const href = this.getAttribute('href');
@@ -1182,9 +1146,7 @@
     });
   });
 
-  // ==========================================
-  // 6. Pre-filled messages при клике "Заказать"
-  // ==========================================
+  // 6. Pre-filled сообщения при клике "Заказать"
   const TELEGRAM_URL = 'https://t.me/managerofdestiny';
   const WHATSAPP_URL = 'https://wa.me/79062693247';
 
@@ -1194,10 +1156,8 @@
       const service = this.dataset.service;
       if (!service) return;
 
-      // Сохраняем выбранную услугу, чтобы использовать в мессенджере
       sessionStorage.setItem('selectedService', service);
 
-      // Скроллим к блоку связи
       const contactSection = document.getElementById('contact');
       if (contactSection) {
         const offset = 80;
@@ -1205,7 +1165,6 @@
         window.scrollTo({ top, behavior: 'smooth' });
       }
 
-      // Подсветим кнопки соцсетей после скролла
       setTimeout(() => {
         document.querySelectorAll('.social-btn').forEach(btn => {
           btn.classList.add('animate-pulse-gold');
@@ -1215,7 +1174,6 @@
     });
   });
 
-  // Обновляем ссылки соцсетей с pre-filled сообщением при наличии выбранной услуги
   const updateSocialLinks = () => {
     const service = sessionStorage.getItem('selectedService');
     if (!service) return;
@@ -1230,7 +1188,6 @@
     if (whatsappBtn) whatsappBtn.href = `${WHATSAPP_URL}?text=${encoded}`;
   };
 
-  // Наблюдатель за появлением блока связи — обновляем ссылки
   const contactObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -1242,12 +1199,9 @@
   const contactSection = document.getElementById('contact');
   if (contactSection) contactObserver.observe(contactSection);
 
-  // Также обновляем сразу при загрузке (если уже есть сохранённая услуга)
   updateSocialLinks();
 
-  // ==========================================
-  // 7. Scroll reveal animation
-  // ==========================================
+  // 7. Scroll reveal
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
