@@ -3,11 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Астролог Елена Соколева. Натальные карты, прогнозы, финансовые консультации. 10 лет опыта, 500+ клиентов. Онлайн-консультации.">
-<meta property="og:title" content="Управление Судьбой — Астрологические консультации">
-<meta property="og:description" content="Профессиональная астрология. Натальные карты, прогнозы на год, анализ финансового потенциала.">
+<meta name="description" content="Астролог Айнура Батталова — Управление Судьбой. Натальные карты, прогнозы, финансовые консультации. Онлайн-консультации через Telegram и ВКонтакте.">
+<meta name="keywords" content="астролог, натальная карта, прогноз, гороскоп, консультация астролога, Айнура Батталова, Управление Судьбой">
+<meta property="og:title" content="Управление Судьбой — Айнура Батталова · Астролог">
+<meta property="og:description" content="Раскройте тайны своей судьбы через звёзды. Профессиональные астрологические консультации онлайн.">
 <meta property="og:type" content="website">
-<title>Управление Судьбой — Астрологические консультации</title>
+<title>Управление Судьбой — Айнура Батталова · Астролог</title>
 
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
@@ -16,19 +17,60 @@
       extend: {
         colors: {
           'cosmos': '#0a0a1f',
+          'cosmos-deep': '#05051a',
           'indigo-dark': '#14142b',
           'deep-purple': '#1f1b3d',
           'mystic-gold': '#d4af37',
-          'mystic-gold-dark': '#a88a28',
+          'mystic-gold-light': '#e5c158',
           'soft-violet': '#a78bfa',
           'moon-silver': '#e5e7eb',
           'parchment': '#f5f5dc',
+          'telegram': '#0088cc',
+          'whatsapp': '#25D366',
+          'vk': '#0077FF',
         },
         fontFamily: {
-          'display': ['Cormorant', 'serif'],
-          'mystic': ['Cinzel', 'serif'],
-          'sans': ['Jost', 'sans-serif'],
-        }
+          'display': ['Cormorant', 'Georgia', 'serif'],
+          'mystic': ['Cinzel', 'Georgia', 'serif'],
+          'sans': ['Jost', 'system-ui', 'sans-serif'],
+        },
+        letterSpacing: {
+          'mystic': '0.3em',
+        },
+        animation: {
+          'twinkle': 'twinkle 3s ease-in-out infinite',
+          'twinkle-slow': 'twinkle 5s ease-in-out infinite',
+          'spin-slow': 'spin 60s linear infinite',
+          'spin-slower': 'spin 120s linear infinite',
+          'float': 'float 6s ease-in-out infinite',
+          'pulse-gold': 'pulseGold 3s ease-in-out infinite',
+          'moon-glow': 'moonGlow 4s ease-in-out infinite',
+        },
+        keyframes: {
+          twinkle: {
+            '0%, 100%': { opacity: '0.2' },
+            '50%': { opacity: '1' },
+          },
+          float: {
+            '0%, 100%': { transform: 'translateY(0)' },
+            '50%': { transform: 'translateY(-10px)' },
+          },
+          pulseGold: {
+            '0%, 100%': { boxShadow: '0 0 20px rgba(212, 175, 55, 0.3), 0 0 40px rgba(212, 175, 55, 0.1)' },
+            '50%': { boxShadow: '0 0 40px rgba(212, 175, 55, 0.6), 0 0 80px rgba(212, 175, 55, 0.2)' },
+          },
+          moonGlow: {
+            '0%, 100%': { filter: 'drop-shadow(0 0 20px rgba(212, 175, 55, 0.4))' },
+            '50%': { filter: 'drop-shadow(0 0 40px rgba(212, 175, 55, 0.7))' },
+          },
+        },
+        backgroundImage: {
+          'gradient-cosmos': 'radial-gradient(ellipse at center, #1a1a3a 0%, #0a0a1f 70%)',
+          'gradient-deep': 'linear-gradient(135deg, #1f1b3d 0%, #14142b 100%)',
+          'gradient-gold': 'linear-gradient(135deg, #d4af37 0%, #e5c158 50%, #d4af37 100%)',
+          'gradient-violet': 'linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%)',
+          'gradient-avatar': 'radial-gradient(circle at 30% 30%, #3b2d6b 0%, #1f1b3d 50%, #14142b 100%)',
+        },
       }
     }
   }
@@ -36,174 +78,97 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-  html { scroll-behavior: smooth; scroll-padding-top: 80px; }
-
+  html { scroll-behavior: smooth; }
   body {
     background: #0a0a1f;
     position: relative;
     overflow-x: hidden;
+    color: #f5f5dc;
   }
-
-  /* === Звёздный фон === */
-  #stars-container {
+  body::before {
+    content: '';
     position: fixed;
     inset: 0;
+    background: radial-gradient(ellipse at 50% 20%, #1a1a3a 0%, #0a0a1f 70%);
+    z-index: -2;
     pointer-events: none;
-    z-index: 0;
-    overflow: hidden;
   }
+
+  /* Звёзды */
   .star {
     position: absolute;
-    background: #fff;
+    background: white;
     border-radius: 50%;
-    animation: twinkle var(--dur, 3s) ease-in-out infinite;
-    animation-delay: var(--delay, 0s);
-  }
-  @keyframes twinkle {
-    0%, 100% { opacity: 0.15; transform: scale(1); }
-    50% { opacity: 1; transform: scale(1.2); }
+    pointer-events: none;
   }
 
-  /* === Gold glow === */
+  /* Gold glow */
   .gold-glow {
-    box-shadow: 0 0 20px rgba(212, 175, 55, 0.25), 0 0 40px rgba(212, 175, 55, 0.08);
-    transition: box-shadow 0.4s ease, transform 0.4s ease;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.3), 0 0 40px rgba(212, 175, 55, 0.1);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
   }
   .gold-glow:hover {
-    box-shadow: 0 0 30px rgba(212, 175, 55, 0.5), 0 0 60px rgba(212, 175, 55, 0.2);
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.6), 0 0 60px rgba(212, 175, 55, 0.2);
   }
 
-  .text-glow-gold {
-    text-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
-  }
-
-  /* === Glass card === */
-  .glass-card {
+  /* Glassmorphism */
+  .glass {
     background: rgba(31, 27, 61, 0.4);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(212, 175, 55, 0.18);
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
-  .glass-card:hover {
-    border-color: rgba(212, 175, 55, 0.6);
-    transform: translateY(-4px);
-    box-shadow: 0 20px 60px rgba(212, 175, 55, 0.15);
-  }
-
-  /* === Zodiac ring rotation === */
-  @keyframes slowRotate {
-    from { transform: translate(-50%, -50%) rotate(0deg); }
-    to { transform: translate(-50%, -50%) rotate(360deg); }
-  }
-  .zodiac-ring {
-    animation: slowRotate 120s linear infinite;
+  .glass:hover {
+    border-color: rgba(212, 175, 55, 0.5);
+    box-shadow: 0 8px 32px rgba(212, 175, 55, 0.15);
   }
 
-  /* === Moon glow === */
-  .moon-glow {
-    filter: drop-shadow(0 0 25px rgba(212, 175, 55, 0.5)) drop-shadow(0 0 50px rgba(212, 175, 55, 0.25));
-  }
-
-  /* === Gold separator line === */
+  /* Золотая линия */
   .gold-divider {
+    background: linear-gradient(90deg, transparent, #d4af37, transparent);
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.6), transparent);
   }
 
-  /* === Scrollbar === */
+  /* Скролл-бар */
   ::-webkit-scrollbar { width: 8px; }
   ::-webkit-scrollbar-track { background: #0a0a1f; }
-  ::-webkit-scrollbar-thumb { background: rgba(212, 175, 55, 0.4); border-radius: 4px; }
-  ::-webkit-scrollbar-thumb:hover { background: rgba(212, 175, 55, 0.7); }
+  ::-webkit-scrollbar-thumb { background: #d4af37; border-radius: 4px; }
 
-  /* === FAQ accordion === */
-  .faq-item {
-    border: 1px solid rgba(212, 175, 55, 0.15);
-    transition: all 0.3s ease;
-  }
-  .faq-item.active {
-    border-left: 3px solid #d4af37;
-    border-color: rgba(212, 175, 55, 0.4);
-    background: rgba(31, 27, 61, 0.5);
-  }
-  .faq-content {
+  /* FAQ */
+  .faq-answer {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.4s ease, padding 0.4s ease;
+    transition: max-height 0.5s ease, padding 0.3s ease;
   }
-  .faq-item.active .faq-content {
+  .faq-item.open .faq-answer {
     max-height: 500px;
-    padding-top: 16px;
-    padding-bottom: 20px;
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+  }
+  .faq-item.open {
+    border-left-color: #d4af37 !important;
+    background: rgba(212, 175, 55, 0.05);
   }
   .faq-icon { transition: transform 0.3s ease; }
-  .faq-item.active .faq-icon { transform: rotate(45deg); }
+  .faq-item.open .faq-icon { transform: rotate(45deg); }
 
-  /* === Form === */
-  .form-field {
-    background: rgba(10, 10, 31, 0.6);
-    border: 1px solid rgba(212, 175, 55, 0.2);
-    transition: all 0.3s ease;
-  }
-  .form-field:focus {
-    outline: none;
-    border-color: rgba(212, 175, 55, 0.7);
-    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
-    background: rgba(10, 10, 31, 0.85);
-  }
-  .form-field.error {
-    border-color: #ff6b6b;
-    box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.1);
-  }
-  .error-message {
-    color: #ff9999;
-    font-size: 12px;
-    margin-top: 4px;
-    min-height: 16px;
+  /* Constellation pattern */
+  .constellation-bg {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Cg fill='none' stroke='%23d4af37' stroke-width='0.5' opacity='0.15'%3E%3Ccircle cx='50' cy='80' r='1.5' fill='%23d4af37'/%3E%3Ccircle cx='120' cy='50' r='1.5' fill='%23d4af37'/%3E%3Ccircle cx='180' cy='110' r='1.5' fill='%23d4af37'/%3E%3Ccircle cx='280' cy='70' r='1.5' fill='%23d4af37'/%3E%3Ccircle cx='340' cy='150' r='1.5' fill='%23d4af37'/%3E%3Ccircle cx='90' cy='220' r='1.5' fill='%23d4af37'/%3E%3Ccircle cx='200' cy='250' r='1.5' fill='%23d4af37'/%3E%3Ccircle cx='310' cy='280' r='1.5' fill='%23d4af37'/%3E%3Ccircle cx='60' cy='340' r='1.5' fill='%23d4af37'/%3E%3Ccircle cx='180' cy='360' r='1.5' fill='%23d4af37'/%3E%3Cline x1='50' y1='80' x2='120' y2='50'/%3E%3Cline x1='120' y1='50' x2='180' y2='110'/%3E%3Cline x1='180' y1='110' x2='280' y2='70'/%3E%3Cline x1='280' y1='70' x2='340' y2='150'/%3E%3Cline x1='90' y1='220' x2='200' y2='250'/%3E%3Cline x1='200' y1='250' x2='310' y2='280'/%3E%3Cline x1='60' y1='340' x2='180' y2='360'/%3E%3Cline x1='180' y1='110' x2='200' y2='250'/%3E%3C/g%3E%3C/svg%3E");
   }
 
-  /* === Modal === */
-  .modal-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(5, 5, 15, 0.85);
-    backdrop-filter: blur(8px);
-    z-index: 200;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.4s ease;
+  /* Мобильное меню */
+  .mobile-menu {
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
-  .modal-overlay.active { opacity: 1; pointer-events: auto; }
-  .modal-content {
-    background: linear-gradient(135deg, #1f1b3d 0%, #14142b 100%);
-    border: 1px solid rgba(212, 175, 55, 0.4);
-    max-width: 480px;
-    width: 100%;
-    padding: 48px 40px;
-    border-radius: 16px;
-    text-align: center;
-    transform: scale(0.9);
-    transition: transform 0.4s ease;
-    box-shadow: 0 0 80px rgba(212, 175, 55, 0.2);
-  }
-  .modal-overlay.active .modal-content { transform: scale(1); }
+  .mobile-menu.open { transform: translateX(0); }
 
-  /* === Nav scrolled === */
-  .nav-scrolled {
-    background: rgba(10, 10, 31, 0.95) !important;
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(212, 175, 55, 0.15) !important;
-  }
-
-  /* === Fade reveal === */
+  /* Scroll reveal */
   .reveal {
     opacity: 0;
     transform: translateY(30px);
@@ -214,1090 +179,922 @@
     transform: translateY(0);
   }
 
-  /* === Radio custom === */
-  input[type="radio"].radio-custom {
-    appearance: none;
-    width: 20px;
-    height: 20px;
-    border: 2px solid rgba(212, 175, 55, 0.4);
-    border-radius: 50%;
-    cursor: pointer;
+  /* Service card hover */
+  .service-card {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .service-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(212, 175, 55, 0.6);
+  }
+
+  /* Selection */
+  ::selection { background: #d4af37; color: #0a0a1f; }
+
+  /* Zodiac ring */
+  @keyframes rotateZodiac {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+  }
+  .zodiac-ring {
+    animation: rotateZodiac 120s linear infinite;
+  }
+  .zodiac-ring > * {
+    animation: rotateZodiacReverse 120s linear infinite;
+  }
+  @keyframes rotateZodiacReverse {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(-360deg); }
+  }
+
+  /* Social buttons */
+  .social-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 280px;
+    min-height: 160px;
+    padding: 28px 24px;
+    border-radius: 20px;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: 'Jost', sans-serif;
     position: relative;
-    transition: all 0.2s;
-    flex-shrink: 0;
+    overflow: hidden;
   }
-  input[type="radio"].radio-custom:checked {
-    border-color: #d4af37;
-    background: transparent;
-  }
-  input[type="radio"].radio-custom:checked::after {
+  .social-btn::before {
     content: '';
     position: absolute;
-    top: 50%; left: 50%;
-    width: 10px; height: 10px;
-    background: #d4af37;
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    box-shadow: 0 0 10px rgba(212, 175, 55, 0.6);
+    top: 0; left: 0; right: 0;
+    height: 40%;
+    background: linear-gradient(180deg, rgba(255,255,255,0.12) 0%, transparent 100%);
+    pointer-events: none;
+  }
+  .social-btn:hover {
+    transform: translateY(-4px) scale(1.03);
+  }
+  .social-btn.telegram { background: linear-gradient(135deg, #0088cc 0%, #006699 100%); box-shadow: 0 8px 24px rgba(0, 136, 204, 0.4); }
+  .social-btn.telegram:hover { box-shadow: 0 12px 40px rgba(0, 136, 204, 0.7); }
+  .social-btn.whatsapp { background: linear-gradient(135deg, #25D366 0%, #128C7E 100%); box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4); }
+  .social-btn.whatsapp:hover { box-shadow: 0 12px 40px rgba(37, 211, 102, 0.7); }
+  .social-btn.vk { background: linear-gradient(135deg, #0077FF 0%, #0055CC 100%); box-shadow: 0 8px 24px rgba(0, 119, 255, 0.4); }
+  .social-btn.vk:hover { box-shadow: 0 12px 40px rgba(0, 119, 255, 0.7); }
+  .social-icon { width: 48px; height: 48px; margin-bottom: 14px; position: relative; z-index: 1; }
+  .social-label { font-size: 20px; font-weight: 600; margin-bottom: 4px; position: relative; z-index: 1; letter-spacing: 0.5px; }
+  .social-sublabel { font-size: 14px; opacity: 0.9; position: relative; z-index: 1; font-weight: 300; }
+
+  /* Process connector */
+  @media (min-width: 1024px) {
+    .process-line::before {
+      content: '';
+      position: absolute;
+      top: 48px;
+      left: 12%;
+      right: 12%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.5), transparent);
+      z-index: 0;
+    }
   }
 
-  input[type="checkbox"].check-custom {
-    appearance: none;
-    width: 20px; height: 20px;
-    border: 2px solid rgba(212, 175, 55, 0.4);
-    border-radius: 4px;
-    cursor: pointer;
-    position: relative;
-    transition: all 0.2s;
-    flex-shrink: 0;
+  /* Badge pulse */
+  @keyframes badgePulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
   }
-  input[type="checkbox"].check-custom:checked {
-    background: #d4af37;
-    border-color: #d4af37;
-  }
-  input[type="checkbox"].check-custom:checked::after {
-    content: '✓';
-    position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    color: #0a0a1f;
-    font-weight: bold;
-    font-size: 14px;
-  }
-
-  /* date/time input fix */
-  input[type="date"], input[type="time"] {
-    color-scheme: dark;
-  }
+  .badge-popular { animation: badgePulse 2s ease-in-out infinite; }
 </style>
 </head>
 
-<body class="font-sans text-parchment antialiased">
+<body class="font-sans antialiased">
 
-<!-- ============================================
-     STARS BACKGROUND
-     ============================================ -->
-<div id="stars-container"></div>
+<!-- Декоративные звёзды -->
+<div id="stars-container" class="fixed inset-0 pointer-events-none z-0"></div>
+<div class="fixed inset-0 pointer-events-none z-0 opacity-20 constellation-bg"></div>
 
 <!-- ============================================
      NAVIGATION
      ============================================ -->
-<header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b border-transparent">
-  <nav class="container mx-auto px-6 md:px-12 py-5">
-    <div class="flex items-center justify-between">
-      <a href="#" class="font-mystic text-mystic-gold text-sm md:text-base tracking-[0.25em] flex items-center gap-2">
-        <span class="text-lg">✦</span>
-        <span>УПРАВЛЕНИЕ СУДЬБОЙ</span>
-      </a>
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
+  <div class="container mx-auto px-4 md:px-8 py-4 flex items-center justify-between">
+    <a href="#" class="flex items-center gap-2 group">
+      <svg class="w-5 h-5 text-mystic-gold" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16.8l-6.2 4.5 2.4-7.4L2 9.4h7.6z"/>
+      </svg>
+      <span class="font-mystic text-mystic-gold text-xs md:text-sm tracking-mystic">УПРАВЛЕНИЕ СУДЬБОЙ</span>
+    </a>
 
-      <div class="hidden lg:flex items-center space-x-8">
-        <a href="#about" class="text-sm text-parchment/80 hover:text-mystic-gold transition">Обо мне</a>
-        <a href="#services" class="text-sm text-parchment/80 hover:text-mystic-gold transition">Услуги</a>
-        <a href="#process" class="text-sm text-parchment/80 hover:text-mystic-gold transition">Как проходит</a>
-        <a href="#reviews" class="text-sm text-parchment/80 hover:text-mystic-gold transition">Отзывы</a>
-        <a href="#faq" class="text-sm text-parchment/80 hover:text-mystic-gold transition">FAQ</a>
-        <a href="#contacts" class="text-sm text-parchment/80 hover:text-mystic-gold transition">Контакты</a>
-      </div>
+    <ul class="hidden lg:flex items-center gap-8 text-sm text-parchment/80">
+      <li><a href="#about" class="hover:text-mystic-gold transition-colors duration-300">Обо мне</a></li>
+      <li><a href="#services" class="hover:text-mystic-gold transition-colors duration-300">Услуги</a></li>
+      <li><a href="#process" class="hover:text-mystic-gold transition-colors duration-300">Как проходит</a></li>
+      <li><a href="#reviews" class="hover:text-mystic-gold transition-colors duration-300">Отзывы</a></li>
+      <li><a href="#faq" class="hover:text-mystic-gold transition-colors duration-300">FAQ</a></li>
+      <li><a href="#contact" class="hover:text-mystic-gold transition-colors duration-300">Связь</a></li>
+    </ul>
 
-      <a href="#booking" class="hidden md:inline-block px-6 py-2.5 border border-mystic-gold text-mystic-gold text-xs tracking-widest uppercase hover:bg-mystic-gold hover:text-cosmos transition-all">
-        Записаться
-      </a>
+    <a href="#contact" class="hidden lg:inline-flex items-center gap-2 px-6 py-2.5 border border-mystic-gold/60 text-mystic-gold rounded-full text-sm font-medium hover:bg-mystic-gold hover:text-cosmos transition-all duration-300">
+      Записаться
+    </a>
 
-      <button id="mobile-btn" class="lg:hidden text-mystic-gold text-2xl" aria-label="Меню">☰</button>
-    </div>
+    <button id="burger" class="lg:hidden w-10 h-10 flex items-center justify-center text-mystic-gold" aria-label="Меню">
+      <svg class="w-7 h-7" viewBox="0 0 24 24" fill="currentColor">
+        <circle cx="4" cy="12" r="2.5"/>
+        <circle cx="12" cy="12" r="2.5"/>
+        <circle cx="20" cy="12" r="2.5"/>
+      </svg>
+    </button>
+  </div>
+</nav>
 
-    <!-- Mobile menu -->
-    <div id="mobile-menu" class="hidden lg:hidden mt-6 pb-4 space-y-4">
-      <a href="#about" class="block text-parchment hover:text-mystic-gold transition">Обо мне</a>
-      <a href="#services" class="block text-parchment hover:text-mystic-gold transition">Услуги</a>
-      <a href="#process" class="block text-parchment hover:text-mystic-gold transition">Как проходит</a>
-      <a href="#reviews" class="block text-parchment hover:text-mystic-gold transition">Отзывы</a>
-      <a href="#faq" class="block text-parchment hover:text-mystic-gold transition">FAQ</a>
-      <a href="#contacts" class="block text-parchment hover:text-mystic-gold transition">Контакты</a>
-      <a href="#booking" class="block mt-4 px-6 py-3 border border-mystic-gold text-mystic-gold text-center text-xs tracking-widest uppercase hover:bg-mystic-gold hover:text-cosmos transition">
-        Записаться
-      </a>
-    </div>
-  </nav>
-</header>
+<!-- Mobile menu -->
+<div id="mobile-menu" class="mobile-menu fixed inset-0 z-40 bg-cosmos/98 backdrop-blur-xl flex flex-col items-center justify-center">
+  <button id="close-menu" class="absolute top-6 right-6 w-10 h-10 text-mystic-gold text-3xl" aria-label="Закрыть">×</button>
+  <ul class="flex flex-col items-center gap-6 text-2xl font-mystic text-parchment">
+    <li><a href="#about" class="mobile-link hover:text-mystic-gold transition-colors">Обо мне</a></li>
+    <li><a href="#services" class="mobile-link hover:text-mystic-gold transition-colors">Услуги</a></li>
+    <li><a href="#process" class="mobile-link hover:text-mystic-gold transition-colors">Как проходит</a></li>
+    <li><a href="#reviews" class="mobile-link hover:text-mystic-gold transition-colors">Отзывы</a></li>
+    <li><a href="#faq" class="mobile-link hover:text-mystic-gold transition-colors">FAQ</a></li>
+    <li><a href="#contact" class="mobile-link hover:text-mystic-gold transition-colors">Связь</a></li>
+    <li class="mt-6">
+      <a href="#contact" class="mobile-link px-8 py-3 bg-mystic-gold text-cosmos rounded-full font-semibold">Записаться</a>
+    </li>
+  </ul>
+</div>
 
 <main class="relative z-10">
 
-<!-- ============================================
-     HERO
-     ============================================ -->
-<section class="relative min-h-screen flex items-center justify-center overflow-hidden px-6 pt-24">
-  <!-- Big moon -->
-  <div class="absolute top-20 right-4 md:right-20 w-32 md:w-56 opacity-30 md:opacity-60 moon-glow pointer-events-none">
-    <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <radialGradient id="moonGrad" cx="35%" cy="35%">
-          <stop offset="0%" stop-color="#f5e6a8"/>
-          <stop offset="60%" stop-color="#d4af37"/>
-          <stop offset="100%" stop-color="#8b6f1f"/>
-        </radialGradient>
-      </defs>
-      <circle cx="100" cy="100" r="90" fill="url(#moonGrad)"/>
-      <circle cx="130" cy="80" r="80" fill="#0a0a1f"/>
-    </svg>
-  </div>
-
-  <div class="container mx-auto max-w-4xl relative z-10 text-center">
-    <!-- Crescent moon symbol -->
-    <div class="flex justify-center mb-8">
-      <svg class="w-12 h-12 md:w-16 md:h-16 text-mystic-gold moon-glow" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/>
+  <!-- ============================================
+       HERO
+       ============================================ -->
+  <section class="min-h-screen flex items-center justify-center relative overflow-hidden pt-24 pb-16">
+    <!-- Декоративная луна -->
+    <div class="absolute top-20 right-10 md:right-20 w-32 h-32 md:w-48 md:h-48 animate-moon-glow opacity-80 hidden md:block">
+      <svg viewBox="0 0 100 100" class="w-full h-full">
+        <defs>
+          <radialGradient id="moonGrad" cx="40%" cy="40%">
+            <stop offset="0%" stop-color="#e5c158"/>
+            <stop offset="100%" stop-color="#d4af37"/>
+          </radialGradient>
+        </defs>
+        <path d="M 70,20 A 35,35 0 1,0 70,80 A 25,25 0 1,1 70,20 Z" fill="url(#moonGrad)" opacity="0.95"/>
       </svg>
     </div>
 
-    <p class="font-mystic text-mystic-gold text-xs md:text-sm tracking-[0.35em] uppercase mb-6">
-      Астрологические консультации
-    </p>
-
-    <h1 class="font-display italic text-5xl md:text-7xl lg:text-[80px] leading-[1.05] mb-8 text-parchment text-glow-gold">
-      Раскройте тайны своей<br>судьбы <span class="text-mystic-gold">через звёзды</span>
-    </h1>
-
-    <p class="text-lg md:text-xl text-parchment/70 max-w-2xl mx-auto mb-8 leading-relaxed">
-      Натальная карта — это карта вашей души. Узнайте, что говорят планеты о вашем прошлом, настоящем и будущем.
-    </p>
-
-    <p class="text-sm text-moon-silver/70 mb-10 tracking-wide">
-      Более 500 проведённых консультаций · 10 лет практики
-    </p>
-
-    <div class="flex flex-col sm:flex-row gap-4 justify-center mb-14">
-      <a href="#booking" class="px-10 py-4 bg-mystic-gold text-cosmos font-medium tracking-widest text-sm uppercase rounded-full gold-glow hover:bg-mystic-gold-dark transition">
-        Заказать консультацию
-      </a>
-      <a href="#services" class="px-10 py-4 border border-mystic-gold text-mystic-gold font-medium tracking-widest text-sm uppercase rounded-full hover:bg-mystic-gold/10 transition">
-        Узнать об услугах
-      </a>
+    <div class="absolute top-24 right-4 w-20 h-20 animate-moon-glow opacity-60 md:hidden">
+      <svg viewBox="0 0 100 100" class="w-full h-full">
+        <path d="M 70,20 A 35,35 0 1,0 70,80 A 25,25 0 1,1 70,20 Z" fill="#d4af37" opacity="0.9"/>
+      </svg>
     </div>
 
-    <!-- Decorative line -->
-    <div class="flex items-center justify-center max-w-md mx-auto">
-      <div class="flex-1 gold-divider"></div>
-      <span class="mx-4 text-mystic-gold text-xl">☽</span>
-      <div class="flex-1 gold-divider"></div>
+    <div class="container mx-auto px-4 md:px-8 text-center max-w-5xl relative">
+      <!-- Top moon symbol -->
+      <div class="mb-8 inline-block" style="filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.6));">
+        <svg class="w-16 h-16 md:w-20 md:h-20 text-mystic-gold" viewBox="0 0 100 100">
+          <path d="M 70,15 A 40,40 0 1,0 70,85 A 30,30 0 1,1 70,15 Z" fill="currentColor"/>
+        </svg>
+      </div>
+
+      <p class="font-mystic text-mystic-gold text-xs md:text-sm tracking-mystic mb-6">
+        ✦ АСТРОЛОГИЧЕСКИЕ КОНСУЛЬТАЦИИ · АЙНУРА БАТТАЛОВА ✦
+      </p>
+
+      <h1 class="font-display italic text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-parchment leading-[1.05] mb-6">
+        Раскройте тайны своей<br>
+        <span class="text-mystic-gold" style="text-shadow: 0 0 30px rgba(212, 175, 55, 0.4);">судьбы</span> через звёзды
+      </h1>
+
+      <p class="text-base md:text-lg lg:text-xl text-parchment/70 max-w-2xl mx-auto mb-6 leading-relaxed">
+        Натальная карта — это карта вашей души. Узнайте, что говорят планеты о вашем прошлом, настоящем и будущем.
+      </p>
+
+      <p class="text-sm md:text-base text-mystic-gold/80 font-mystic tracking-widest mb-10">
+        500+ консультаций · Западный и ведический подход
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+        <a href="#contact" class="w-full sm:w-auto px-10 py-4 bg-mystic-gold text-cosmos rounded-full font-semibold text-base md:text-lg gold-glow hover:bg-mystic-gold-light transition-all duration-300 inline-flex items-center justify-center gap-2">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16.8l-6.2 4.5 2.4-7.4L2 9.4h7.6z"/></svg>
+          Заказать консультацию
+        </a>
+        <a href="#services" class="w-full sm:w-auto px-10 py-4 border border-mystic-gold/60 text-mystic-gold rounded-full font-medium text-base md:text-lg hover:bg-mystic-gold/10 transition-all duration-300 inline-flex items-center justify-center">
+          Узнать об услугах
+        </a>
+      </div>
+
+      <div class="flex items-center justify-center gap-4 max-w-md mx-auto">
+        <div class="flex-1 h-px bg-gradient-to-r from-transparent to-mystic-gold/40"></div>
+        <svg class="w-5 h-5 text-mystic-gold" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="0.5"/></svg>
+        <div class="flex-1 h-px bg-gradient-to-l from-transparent to-mystic-gold/40"></div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ============================================
-     ABOUT
-     ============================================ -->
-<section id="about" class="py-24 md:py-32 relative">
-  <!-- Zodiac border top -->
-  <div class="absolute top-0 left-0 right-0 flex justify-center gap-4 md:gap-8 text-mystic-gold/20 text-xl md:text-2xl font-mystic">
-    <span>♈</span><span>♉</span><span>♊</span><span>♋</span><span>♌</span><span>♍</span>
-    <span class="hidden md:inline">♎</span><span class="hidden md:inline">♏</span><span class="hidden md:inline">♐</span>
-    <span class="hidden md:inline">♑</span><span class="hidden md:inline">♒</span><span class="hidden md:inline">♓</span>
-  </div>
+  <!-- ============================================
+       ОБО МНЕ
+       ============================================ -->
+  <section id="about" class="py-20 md:py-28 relative">
+    <div class="container mx-auto px-4 md:px-8 max-w-6xl">
+      <div class="text-center mb-16 reveal">
+        <p class="font-mystic text-mystic-gold text-xs tracking-mystic mb-3">✦ ОБО МНЕ ✦</p>
+        <h2 class="font-display italic text-4xl md:text-5xl lg:text-6xl text-parchment mb-4">
+          Ваш проводник в мире звёзд
+        </h2>
+        <div class="w-24 h-px bg-mystic-gold mx-auto"></div>
+      </div>
 
-  <div class="container mx-auto px-6 md:px-12">
-    <div class="text-center mb-16 reveal">
-      <p class="font-mystic text-mystic-gold text-xs tracking-[0.35em] uppercase mb-4">Обо мне</p>
-      <h2 class="font-display italic text-4xl md:text-6xl text-parchment text-glow-gold">
-        Ваш проводник в мире звёзд
-      </h2>
-    </div>
+      <div class="grid md:grid-cols-[45%_55%] gap-12 md:gap-16 items-center">
+        <!-- Аватар -->
+        <div class="relative max-w-sm mx-auto w-full reveal">
+          <div class="relative aspect-square">
+            <!-- Zodiac ring -->
+            <div class="absolute inset-0 zodiac-ring pointer-events-none">
+              <svg class="w-full h-full" viewBox="0 0 400 400">
+                <circle cx="200" cy="200" r="195" fill="none" stroke="#d4af37" stroke-width="0.5" opacity="0.3" stroke-dasharray="2 4"/>
+                <circle cx="200" cy="200" r="175" fill="none" stroke="#d4af37" stroke-width="0.5" opacity="0.2"/>
+              </svg>
+              <span class="absolute top-0 left-1/2 -translate-x-1/2 text-mystic-gold text-xl">♈</span>
+              <span class="absolute top-[13%] right-[13%] text-mystic-gold text-xl">♉</span>
+              <span class="absolute top-1/2 right-0 -translate-y-1/2 text-mystic-gold text-xl">♊</span>
+              <span class="absolute bottom-[13%] right-[13%] text-mystic-gold text-xl">♋</span>
+              <span class="absolute bottom-0 left-1/2 -translate-x-1/2 text-mystic-gold text-xl">♌</span>
+              <span class="absolute bottom-[13%] left-[13%] text-mystic-gold text-xl">♍</span>
+              <span class="absolute top-1/2 left-0 -translate-y-1/2 text-mystic-gold text-xl">♎</span>
+              <span class="absolute top-[13%] left-[13%] text-mystic-gold text-xl">♏</span>
+              <span class="absolute top-[25%] left-1/2 -translate-x-1/2 text-mystic-gold text-sm opacity-60">♐</span>
+              <span class="absolute bottom-[25%] left-1/2 -translate-x-1/2 text-mystic-gold text-sm opacity-60">♑</span>
+              <span class="absolute top-1/2 left-[25%] -translate-y-1/2 text-mystic-gold text-sm opacity-60">♒</span>
+              <span class="absolute top-1/2 right-[25%] -translate-y-1/2 text-mystic-gold text-sm opacity-60">♓</span>
+            </div>
 
-    <div class="grid lg:grid-cols-[45%_55%] gap-12 lg:gap-20 items-center">
-      <!-- Avatar with zodiac ring -->
-      <div class="reveal flex justify-center">
-        <div class="relative w-72 h-72 md:w-96 md:h-96">
-          <!-- Zodiac ring -->
-          <div class="absolute inset-0 zodiac-ring">
-            <div class="absolute inset-0 font-mystic text-mystic-gold/60 text-xl">
-              <!-- Positioned zodiac signs in a circle -->
-              <span class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-2">♈</span>
-              <span class="absolute top-[6.7%] right-[6.7%] translate-x-2 -translate-y-2">♉</span>
-              <span class="absolute top-1/2 right-0 translate-x-2 -translate-y-1/2">♊</span>
-              <span class="absolute bottom-[6.7%] right-[6.7%] translate-x-2 translate-y-2">♋</span>
-              <span class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-2">♌</span>
-              <span class="absolute bottom-[6.7%] left-[6.7%] -translate-x-2 translate-y-2">♍</span>
-              <span class="absolute top-1/2 left-0 -translate-x-2 -translate-y-1/2">♎</span>
-              <span class="absolute top-[6.7%] left-[6.7%] -translate-x-2 -translate-y-2">♏</span>
+            <!-- Аватар -->
+            <div class="absolute inset-8 rounded-full bg-gradient-avatar flex items-center justify-center gold-glow border-2 border-mystic-gold/60">
+              <span class="font-mystic text-6xl md:text-7xl text-mystic-gold tracking-wider">АБ</span>
             </div>
           </div>
-          <!-- Inner ring -->
-          <div class="absolute inset-8 rounded-full border border-mystic-gold/30"></div>
-          <!-- Avatar -->
-          <div class="absolute inset-12 rounded-full bg-gradient-to-br from-indigo-dark via-deep-purple to-soft-violet/40 border-2 border-mystic-gold gold-glow flex items-center justify-center">
-            <span class="font-display text-7xl md:text-8xl text-mystic-gold italic">ЕС</span>
+        </div>
+
+        <!-- Инфо -->
+        <div class="reveal">
+          <h3 class="font-display italic text-3xl md:text-4xl text-mystic-gold mb-3">Айнура Батталова</h3>
+          <p class="text-soft-violet text-sm md:text-base mb-6 font-medium tracking-wide">
+            Профессиональный астролог · Создатель проекта «Управление Судьбой»
+          </p>
+
+          <div class="space-y-4 text-parchment/80 leading-relaxed mb-8">
+            <p>
+              Мой путь в астрологию начался с глубокого изучения собственной натальной карты и желания понять законы, по которым движется наша жизнь. То, что я увидела в расположении планет в момент своего рождения, перевернуло представление о себе и своём предназначении.
+            </p>
+            <p>
+              Я соединяю классическую западную астрологию с ведической традицией, чтобы дать клиентам целостную картину их потенциала и жизненных циклов. Такой синтез позволяет видеть не только поверхностные тенденции, но и глубинные кармические задачи, стоящие перед человеком.
+            </p>
           </div>
+
+          <ul class="space-y-2.5 mb-8">
+            <li class="flex items-start gap-3 text-sm md:text-base text-parchment/85">
+              <span class="text-mystic-gold flex-shrink-0 mt-0.5">✦</span>
+              <span>Школа классической астрологии</span>
+            </li>
+            <li class="flex items-start gap-3 text-sm md:text-base text-parchment/85">
+              <span class="text-mystic-gold flex-shrink-0 mt-0.5">✦</span>
+              <span>Профессиональное обучение ведической астрологии (Джйотиш)</span>
+            </li>
+            <li class="flex items-start gap-3 text-sm md:text-base text-parchment/85">
+              <span class="text-mystic-gold flex-shrink-0 mt-0.5">✦</span>
+              <span>500+ проведённых консультаций</span>
+            </li>
+            <li class="flex items-start gap-3 text-sm md:text-base text-parchment/85">
+              <span class="text-mystic-gold flex-shrink-0 mt-0.5">✦</span>
+              <span>Автор проекта «Управление Судьбой»</span>
+            </li>
+          </ul>
+
+          <blockquote class="border-l-2 border-mystic-gold pl-5 py-2 italic font-display text-lg text-parchment/90">
+            «Астрология — это не гадание. Это древняя наука о циклах и потенциале. Я не предсказываю будущее — я показываю возможности, которые уже заложены в вашей карте.»
+          </blockquote>
         </div>
       </div>
+    </div>
+  </section>
 
-      <!-- Text -->
-      <div class="reveal">
-        <h3 class="font-display text-4xl md:text-5xl text-mystic-gold italic mb-3">
-          Елена Соколева
-        </h3>
-        <p class="text-moon-silver mb-8 text-lg">
-          Профессиональный астролог, ведический и западный подход
+  <!-- ============================================
+       УСЛУГИ
+       ============================================ -->
+  <section id="services" class="py-20 md:py-28 relative">
+    <div class="container mx-auto px-4 md:px-8 max-w-7xl">
+      <div class="text-center mb-16 reveal">
+        <p class="font-mystic text-mystic-gold text-xs tracking-mystic mb-3">✦ УСЛУГИ ✦</p>
+        <h2 class="font-display italic text-4xl md:text-5xl lg:text-6xl text-parchment mb-4">
+          Выберите свою консультацию
+        </h2>
+        <p class="text-parchment/70 text-base md:text-lg max-w-2xl mx-auto">
+          Каждая услуга — это глубокое погружение в ваш звёздный код
         </p>
+        <div class="w-24 h-px bg-mystic-gold mx-auto mt-6"></div>
+      </div>
 
-        <div class="space-y-5 text-parchment/80 leading-relaxed mb-8">
-          <p>
-            Мой путь в астрологию начался 10 лет назад с изучения натальной карты. С тех пор я провела более 500 консультаций, помогая людям находить ответы на сложные жизненные вопросы через язык звёзд.
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+
+        <!-- Карточка 1: Блиц-ответ -->
+        <article class="service-card glass rounded-2xl p-6 md:p-8 relative reveal">
+          <span class="absolute -top-3 left-6 px-4 py-1 bg-mystic-gold text-cosmos text-xs font-mystic tracking-widest rounded-full">
+            БЫСТРЫЙ ОТВЕТ
+          </span>
+          <div class="w-16 h-16 rounded-full bg-gradient-gold flex items-center justify-center mb-6 gold-glow">
+            <svg class="w-8 h-8 text-cosmos" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+            </svg>
+          </div>
+          <h3 class="font-display text-2xl md:text-3xl text-parchment mb-3">Блиц-ответ</h3>
+          <p class="text-parchment/70 text-sm md:text-base leading-relaxed mb-5">
+            Краткий ответ на один конкретный вопрос. Идеально для срочных решений.
           </p>
-          <p>
-            Я соединяю классическую западную астрологию с ведической традицией, что позволяет дать объёмную картину личности и её потенциала. Каждая консультация — это глубокое исследование, а не поверхностное гадание.
+          <div class="h-px gold-divider mb-5"></div>
+          <ul class="space-y-2 mb-6 text-sm text-parchment/80">
+            <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> 1 вопрос</li>
+            <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> Анализ одного дома гороскопа</li>
+            <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> Письменный ответ в течение 24 часов</li>
+          </ul>
+          <div class="flex items-end justify-between mb-5">
+            <div>
+              <div class="font-display font-bold text-4xl text-mystic-gold">777 ₽</div>
+              <div class="text-xs text-parchment/50 font-mystic tracking-widest mt-1">СРОК: 24 ЧАСА</div>
+            </div>
+          </div>
+          <a href="#contact" data-service="Блиц-ответ" class="service-order block text-center px-6 py-3 border border-mystic-gold/60 text-mystic-gold rounded-full font-medium hover:bg-mystic-gold hover:text-cosmos transition-all duration-300">
+            Заказать
+          </a>
+        </article>
+
+        <!-- Карточка 2: Любой вопрос (POPULAR) -->
+        <article class="service-card glass rounded-2xl p-6 md:p-8 relative reveal">
+          <span class="badge-popular absolute -top-3 left-6 px-4 py-1 bg-soft-violet text-white text-xs font-mystic tracking-widest rounded-full">
+            ПОПУЛЯРНОЕ
+          </span>
+          <div class="w-16 h-16 rounded-full bg-gradient-gold flex items-center justify-center mb-6 gold-glow">
+            <svg class="w-8 h-8 text-cosmos" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM7 9h2v2H7V9zm4 0h2v2h-2V9zm4 0h2v2h-2V9z"/>
+            </svg>
+          </div>
+          <h3 class="font-display text-2xl md:text-3xl text-parchment mb-3">Любой вопрос</h3>
+          <p class="text-parchment/70 text-sm md:text-base leading-relaxed mb-5">
+            Развёрнутый ответ на любую жизненную ситуацию через призму вашей карты.
           </p>
-        </div>
+          <div class="h-px gold-divider mb-5"></div>
+          <ul class="space-y-2 mb-6 text-sm text-parchment/80">
+            <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> 1 глубокий вопрос</li>
+            <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> Анализ нескольких аспектов</li>
+            <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> 60-минутная онлайн-консультация</li>
+            <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> Аудиозапись разговора</li>
+          </ul>
+          <div class="flex items-end justify-between mb-5">
+            <div>
+              <div class="font-display font-bold text-4xl text-mystic-gold">3 000 ₽</div>
+              <div class="text-xs text-parchment/50 font-mystic tracking-widest mt-1">ДЛИТЕЛЬНОСТЬ: 60 МИН</div>
+            </div>
+          </div>
+          <a href="#contact" data-service="Любой вопрос" class="service-order block text-center px-6 py-3 bg-mystic-gold text-cosmos rounded-full font-semibold hover:bg-mystic-gold-light transition-all duration-300 gold-glow">
+            Заказать
+          </a>
+        </article>
 
-        <!-- Credentials -->
-        <div class="space-y-3 mb-10">
-          <div class="flex items-start gap-3 text-parchment/80">
-            <span class="text-mystic-gold mt-1">✦</span>
-            <span>Школа классической астрологии "Авеста" (2014-2017)</span>
+        <!-- Карточка 3: Детский гороскоп -->
+        <article class="service-card glass rounded-2xl p-6 md:p-8 relative reveal">
+          <div class="w-16 h-16 rounded-full bg-gradient-gold flex items-center justify-center mb-6 gold-glow">
+            <svg class="w-8 h-8 text-cosmos" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16.8l-6.2 4.5 2.4-7.4L2 9.4h7.6z"/>
+            </svg>
           </div>
-          <div class="flex items-start gap-3 text-parchment/80">
-            <span class="text-mystic-gold mt-1">✦</span>
-            <span>Сертификат ISAR (International Society for Astrological Research)</span>
+          <h3 class="font-display text-2xl md:text-3xl text-parchment mb-3">Детский гороскоп</h3>
+          <p class="text-parchment/70 text-sm md:text-base leading-relaxed mb-5">
+            Полный анализ карты ребёнка: таланты, характер, потенциал, сложности.
+          </p>
+          <div class="h-px gold-divider mb-5"></div>
+          <ul class="space-y-2 mb-6 text-sm text-parchment/80">
+            <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> Анализ натальной карты ребёнка</li>
+            <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> Совместимость с родителями</li>
+            <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> Рекомендации по воспитанию</li>
+            <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> Письменный отчёт (PDF, 15 стр.)</li>
+            <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> 90-минутная консультация</li>
+          </ul>
+          <div class="flex items-end justify-between mb-5">
+            <div>
+              <div class="font-display font-bold text-4xl text-mystic-gold">3 000 ₽</div>
+              <div class="text-xs text-parchment/50 font-mystic tracking-widest mt-1">ДЛИТЕЛЬНОСТЬ: 90 МИН</div>
+            </div>
           </div>
-          <div class="flex items-start gap-3 text-parchment/80">
-            <span class="text-mystic-gold mt-1">✦</span>
-            <span>Обучение у Павла Глобы, Марины Скади</span>
-          </div>
-          <div class="flex items-start gap-3 text-parchment/80">
-            <span class="text-mystic-gold mt-1">✦</span>
-            <span>500+ проведённых консультаций</span>
-          </div>
-        </div>
+          <a href="#contact" data-service="Детский гороскоп" class="service-order block text-center px-6 py-3 border border-mystic-gold/60 text-mystic-gold rounded-full font-medium hover:bg-mystic-gold hover:text-cosmos transition-all duration-300">
+            Заказать
+          </a>
+        </article>
 
-        <!-- Philosophy -->
-        <blockquote class="border-l-2 border-mystic-gold pl-6 py-4 italic font-display text-xl text-parchment/90">
-          "Астрология — это не гадание. Это древняя наука о циклах и потенциале. Я не предсказываю будущее — я показываю возможности, которые уже заложены в вашей карте."
-        </blockquote>
+        <!-- Карточка 4: Прогноз на год -->
+        <article class="service-card glass rounded-2xl p-6 md:p-8 relative reveal">
+          <div class="w-16 h-16 rounded-full bg-gradient-gold flex items-center justify-center mb-6 gold-glow">
+            <svg class="w-8 h-8 text-cosmos" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zM9 14H7v-2h2v2zm4 0h-2v-2h2v2zm4 0h-2v-2h2v2zm-8 4H7v-2h2v2zm4 0h-2v-2h2v2zm4 0h-2v-2h2v2z"/>
+            </svg>
+          </div>
+          <h3 class="font-display text-2xl md:text-3xl text-parchment mb-3">Прогноз на год</h3>
+          <p class="text-parchment/70 text-sm md:text-base leading-relaxed mb-5">
+            Детальный разбор всех сфер жизни на ближайшие 12 месяцев.
+          </p>
+          <div class="h-px gold-divider mb-5"></div>
+          <ul class="space-y-2 mb-6 text-sm text-parchment/80">
+            <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> Соляр (карта года)</li>
+            <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> Помесячный прогноз</li>
+            <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> Благоприятные и сложные периоды</li>
+            <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> Рекомендации по действиям</li>
+            <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> PDF-отчёт (25 страниц)</li>
+          </ul>
+          <div class="flex items-end justify-between mb-5">
+            <div>
+              <div class="font-display font-bold text-4xl text-mystic-gold">3 000 ₽</div>
+              <div class="text-xs text-parchment/50 font-mystic tracking-widest mt-1">ДЛИТЕЛЬНОСТЬ: 90 МИН</div>
+            </div>
+          </div>
+          <a href="#contact" data-service="Прогноз на год" class="service-order block text-center px-6 py-3 border border-mystic-gold/60 text-mystic-gold rounded-full font-medium hover:bg-mystic-gold hover:text-cosmos transition-all duration-300">
+            Заказать
+          </a>
+        </article>
+
+        <!-- Карточка 5: Финансы -->
+        <article class="service-card glass rounded-2xl p-6 md:p-8 relative reveal">
+          <span class="absolute -top-3 left-6 px-4 py-1 bg-gradient-gold text-cosmos text-xs font-mystic tracking-widest rounded-full">
+            ДЛЯ БИЗНЕСА
+          </span>
+          <div class="w-16 h-16 rounded-full bg-gradient-gold flex items-center justify-center mb-6 gold-glow">
+            <svg class="w-8 h-8 text-cosmos" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/>
+            </svg>
+          </div>
+          <h3 class="font-display text-2xl md:text-3xl text-parchment mb-3">Финансы и капитал</h3>
+          <p class="text-parchment/70 text-sm md:text-base leading-relaxed mb-5">
+            Анализ вашего финансового потенциала, лучшие сферы для заработка, инвестиции.
+          </p>
+          <div class="h-px gold-divider mb-5"></div>
+          <ul class="space-y-2 mb-6 text-sm text-parchment/80">
+            <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> Анализ 2-го и 8-го домов</li>
+            <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> Юпитер и Венера в карте</li>
+            <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> Лучшие периоды для сделок</li>
+            <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> Совместимость с партнёрами</li>
+            <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> PDF-отчёт + консультация</li>
+          </ul>
+          <div class="flex items-end justify-between mb-5">
+            <div>
+              <div class="font-display font-bold text-4xl text-mystic-gold">3 000 ₽</div>
+              <div class="text-xs text-parchment/50 font-mystic tracking-widest mt-1">ДЛИТЕЛЬНОСТЬ: 90 МИН</div>
+            </div>
+          </div>
+          <a href="#contact" data-service="Финансы и капитал" class="service-order block text-center px-6 py-3 border border-mystic-gold/60 text-mystic-gold rounded-full font-medium hover:bg-mystic-gold hover:text-cosmos transition-all duration-300">
+            Заказать
+          </a>
+        </article>
+
+        <!-- Карточка 6: Натальная карта -->
+        <article class="service-card glass rounded-2xl p-6 md:p-8 relative reveal">
+          <span class="absolute -top-3 left-6 px-4 py-1 bg-soft-violet/90 text-white text-xs font-mystic tracking-widest rounded-full">
+            ФУНДАМЕНТАЛЬНО
+          </span>
+          <div class="w-16 h-16 rounded-full bg-gradient-gold flex items-center justify-center mb-6 gold-glow">
+            <svg class="w-8 h-8 text-cosmos" viewBox="0 0 24 24" fill="currentColor">
+              <circle cx="12" cy="12" r="2"/>
+              <circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="1"/>
+              <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="0.8"/>
+              <circle cx="12" cy="3" r="0.8"/>
+              <circle cx="21" cy="12" r="0.8"/>
+              <circle cx="12" cy="21" r="0.8"/>
+              <circle cx="3" cy="12" r="0.8"/>
+              <circle cx="18" cy="6" r="0.8"/>
+              <circle cx="18" cy="18" r="0.8"/>
+              <circle cx="6" cy="18" r="0.8"/>
+              <circle cx="6" cy="6" r="0.8"/>
+            </svg>
+          </div>
+          <h3 class="font-display text-2xl md:text-3xl text-parchment mb-3">Натальная карта</h3>
+          <p class="text-parchment/70 text-sm md:text-base leading-relaxed mb-5">
+            Полный разбор вашей карты рождения. Основа для всех остальных прогнозов.
+          </p>
+          <div class="h-px gold-divider mb-5"></div>
+          <ul class="space-y-2 mb-6 text-sm text-parchment/80">
+            <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> Полный анализ всех планет</li>
+            <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> 12 домов гороскопа</li>
+            <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> Кармические задачи (Лилит, Узлы)</li>
+            <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> Синастрия с партнёром (бонус)</li>
+            <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> PDF-отчёт (30+ страниц)</li>
+            <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> 120-минутная консультация</li>
+          </ul>
+          <div class="flex items-end justify-between mb-5">
+            <div>
+              <div class="font-display font-bold text-4xl text-mystic-gold">3 000 ₽</div>
+              <div class="text-xs text-parchment/50 font-mystic tracking-widest mt-1">ДЛИТЕЛЬНОСТЬ: 120 МИН</div>
+            </div>
+          </div>
+          <a href="#contact" data-service="Натальная карта" class="service-order block text-center px-6 py-3 border border-mystic-gold/60 text-mystic-gold rounded-full font-medium hover:bg-mystic-gold hover:text-cosmos transition-all duration-300">
+            Заказать
+          </a>
+        </article>
+
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ============================================
-     SERVICES
-     ============================================ -->
-<section id="services" class="py-24 md:py-32 relative">
-  <div class="container mx-auto px-6 md:px-12">
-    <div class="text-center mb-16 reveal">
-      <p class="font-mystic text-mystic-gold text-xs tracking-[0.35em] uppercase mb-4">Услуги</p>
-      <h2 class="font-display italic text-4xl md:text-6xl text-parchment text-glow-gold mb-6">
-        Выберите свою консультацию
-      </h2>
-      <p class="text-parchment/70 text-lg max-w-2xl mx-auto">
-        Каждая услуга — это глубокое погружение в ваш звёздный код
-      </p>
-    </div>
+  <!-- ============================================
+       КАК ПРОХОДИТ
+       ============================================ -->
+  <section id="process" class="py-20 md:py-28 relative">
+    <div class="container mx-auto px-4 md:px-8 max-w-6xl">
+      <div class="text-center mb-16 reveal">
+        <p class="font-mystic text-mystic-gold text-xs tracking-mystic mb-3">✦ КАК ПРОХОДИТ ✦</p>
+        <h2 class="font-display italic text-4xl md:text-5xl lg:text-6xl text-parchment mb-4">
+          Путь к вашей карте
+        </h2>
+        <div class="w-24 h-px bg-mystic-gold mx-auto"></div>
+      </div>
 
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+      <div class="relative process-line">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
 
-      <!-- SERVICE 1 -->
-      <article class="glass-card rounded-2xl p-8 reveal relative">
-        <span class="absolute top-6 right-6 text-[10px] tracking-[0.2em] uppercase bg-mystic-gold text-cosmos px-3 py-1 font-semibold">Быстрый ответ</span>
-        <div class="w-14 h-14 rounded-full bg-gradient-to-br from-mystic-gold/30 to-mystic-gold/10 border border-mystic-gold/40 flex items-center justify-center mb-6">
-          <svg class="w-7 h-7 text-mystic-gold" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M7 2v11h3v9l7-12h-4l4-8z"/>
-          </svg>
-        </div>
-        <h3 class="font-display text-3xl text-parchment mb-3">Блиц-ответ</h3>
-        <p class="text-parchment/70 mb-6 leading-relaxed">
-          Краткий ответ на один конкретный вопрос. Идеально для срочных решений.
-        </p>
-        <div class="gold-divider mb-5"></div>
-        <ul class="space-y-2 mb-6 text-sm text-parchment/80">
-          <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> 1 вопрос</li>
-          <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> Анализ одного дома гороскопа</li>
-          <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> Письменный ответ в течение 24 часов</li>
-        </ul>
-        <div class="flex items-end justify-between mb-6">
-          <div>
-            <div class="font-display text-4xl text-mystic-gold text-glow-gold">777 ₽</div>
-            <div class="text-xs text-moon-silver/60 tracking-wider uppercase mt-1">Срок: 24 часа</div>
-          </div>
-        </div>
-        <a href="#booking" data-service="Блиц-ответ" class="service-cta block text-center py-3 border border-mystic-gold text-mystic-gold text-sm tracking-widest uppercase rounded-full hover:bg-mystic-gold hover:text-cosmos transition">
-          Заказать
-        </a>
-      </article>
-
-      <!-- SERVICE 2 -->
-      <article class="glass-card rounded-2xl p-8 reveal relative">
-        <span class="absolute top-6 right-6 text-[10px] tracking-[0.2em] uppercase bg-mystic-gold text-cosmos px-3 py-1 font-semibold">Популярное</span>
-        <div class="w-14 h-14 rounded-full bg-gradient-to-br from-mystic-gold/30 to-mystic-gold/10 border border-mystic-gold/40 flex items-center justify-center mb-6">
-          <svg class="w-7 h-7 text-mystic-gold" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/>
-          </svg>
-        </div>
-        <h3 class="font-display text-3xl text-parchment mb-3">Любой вопрос</h3>
-        <p class="text-parchment/70 mb-6 leading-relaxed">
-          Развёрнутый ответ на любую жизненную ситуацию через призму вашей карты.
-        </p>
-        <div class="gold-divider mb-5"></div>
-        <ul class="space-y-2 mb-6 text-sm text-parchment/80">
-          <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> 1 глубокий вопрос</li>
-          <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> Анализ нескольких аспектов</li>
-          <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> 60-минутная онлайн-консультация</li>
-          <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> Аудиозапись разговора</li>
-        </ul>
-        <div class="flex items-end justify-between mb-6">
-          <div>
-            <div class="font-display text-4xl text-mystic-gold text-glow-gold">3 000 ₽</div>
-            <div class="text-xs text-moon-silver/60 tracking-wider uppercase mt-1">Длительность: 60 мин</div>
-          </div>
-        </div>
-        <a href="#booking" data-service="Любой вопрос" class="service-cta block text-center py-3 border border-mystic-gold text-mystic-gold text-sm tracking-widest uppercase rounded-full hover:bg-mystic-gold hover:text-cosmos transition">
-          Заказать
-        </a>
-      </article>
-
-      <!-- SERVICE 3 -->
-      <article class="glass-card rounded-2xl p-8 reveal relative">
-        <div class="w-14 h-14 rounded-full bg-gradient-to-br from-mystic-gold/30 to-mystic-gold/10 border border-mystic-gold/40 flex items-center justify-center mb-6">
-          <svg class="w-7 h-7 text-mystic-gold" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16.8l-6.2 4.5 2.4-7.4L2 9.4h7.6z"/>
-          </svg>
-        </div>
-        <h3 class="font-display text-3xl text-parchment mb-3">Детский гороскоп</h3>
-        <p class="text-parchment/70 mb-6 leading-relaxed">
-          Полный анализ карты ребёнка: таланты, характер, потенциал, сложности.
-        </p>
-        <div class="gold-divider mb-5"></div>
-        <ul class="space-y-2 mb-6 text-sm text-parchment/80">
-          <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> Анализ натальной карты ребёнка</li>
-          <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> Совместимость с родителями</li>
-          <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> Рекомендации по воспитанию</li>
-          <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> Письменный отчёт (PDF, 15 стр.)</li>
-          <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> 90-минутная консультация</li>
-        </ul>
-        <div class="flex items-end justify-between mb-6">
-          <div>
-            <div class="font-display text-4xl text-mystic-gold text-glow-gold">3 000 ₽</div>
-            <div class="text-xs text-moon-silver/60 tracking-wider uppercase mt-1">Длительность: 90 мин</div>
-          </div>
-        </div>
-        <a href="#booking" data-service="Детский гороскоп" class="service-cta block text-center py-3 border border-mystic-gold text-mystic-gold text-sm tracking-widest uppercase rounded-full hover:bg-mystic-gold hover:text-cosmos transition">
-          Заказать
-        </a>
-      </article>
-
-      <!-- SERVICE 4 -->
-      <article class="glass-card rounded-2xl p-8 reveal relative">
-        <div class="w-14 h-14 rounded-full bg-gradient-to-br from-mystic-gold/30 to-mystic-gold/10 border border-mystic-gold/40 flex items-center justify-center mb-6">
-          <svg class="w-7 h-7 text-mystic-gold" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-            <rect x="3" y="4" width="18" height="18" rx="2"/>
-            <line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/>
-            <line x1="3" y1="10" x2="21" y2="10"/>
-            <path d="M14 15a2 2 0 1 1-4 0 2 2 0 0 1 4 0z" fill="currentColor"/>
-          </svg>
-        </div>
-        <h3 class="font-display text-3xl text-parchment mb-3">Прогноз на год</h3>
-        <p class="text-parchment/70 mb-6 leading-relaxed">
-          Детальный разбор всех сфер жизни на ближайшие 12 месяцев.
-        </p>
-        <div class="gold-divider mb-5"></div>
-        <ul class="space-y-2 mb-6 text-sm text-parchment/80">
-          <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> Соляр (карта года)</li>
-          <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> Помесячный прогноз</li>
-          <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> Благоприятные и сложные периоды</li>
-          <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> Рекомендации по действиям</li>
-          <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> PDF-отчёт (25 страниц)</li>
-        </ul>
-        <div class="flex items-end justify-between mb-6">
-          <div>
-            <div class="font-display text-4xl text-mystic-gold text-glow-gold">3 000 ₽</div>
-            <div class="text-xs text-moon-silver/60 tracking-wider uppercase mt-1">Длительность: 90 мин</div>
-          </div>
-        </div>
-        <a href="#booking" data-service="Прогноз на год" class="service-cta block text-center py-3 border border-mystic-gold text-mystic-gold text-sm tracking-widest uppercase rounded-full hover:bg-mystic-gold hover:text-cosmos transition">
-          Заказать
-        </a>
-      </article>
-
-      <!-- SERVICE 5 -->
-      <article class="glass-card rounded-2xl p-8 reveal relative">
-        <span class="absolute top-6 right-6 text-[10px] tracking-[0.2em] uppercase bg-mystic-gold text-cosmos px-3 py-1 font-semibold">Для бизнеса</span>
-        <div class="w-14 h-14 rounded-full bg-gradient-to-br from-mystic-gold/30 to-mystic-gold/10 border border-mystic-gold/40 flex items-center justify-center mb-6">
-          <svg class="w-7 h-7 text-mystic-gold" fill="currentColor" viewBox="0 0 24 24">
-            <circle cx="12" cy="12" r="10" opacity="0.15"/>
-            <path d="M12 2v20M8 6c0-1 1-2 4-2s4 1 4 2-2 2-4 2-4 1-4 2 1 2 4 2 4 1 4 2-2 2-4 2-4-1-4-2"/>
-          </svg>
-        </div>
-        <h3 class="font-display text-3xl text-parchment mb-3">Финансы и капитал</h3>
-        <p class="text-parchment/70 mb-6 leading-relaxed">
-          Анализ вашего финансового потенциала, лучшие сферы для заработка, инвестиции.
-        </p>
-        <div class="gold-divider mb-5"></div>
-        <ul class="space-y-2 mb-6 text-sm text-parchment/80">
-          <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> Анализ 2-го и 8-го домов</li>
-          <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> Юпитер и Венера в карте</li>
-          <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> Лучшие периоды для сделок</li>
-          <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> Совместимость с партнёрами</li>
-          <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> PDF-отчёт + консультация</li>
-        </ul>
-        <div class="flex items-end justify-between mb-6">
-          <div>
-            <div class="font-display text-4xl text-mystic-gold text-glow-gold">3 000 ₽</div>
-            <div class="text-xs text-moon-silver/60 tracking-wider uppercase mt-1">Длительность: 90 мин</div>
-          </div>
-        </div>
-        <a href="#booking" data-service="Финансы, капитал" class="service-cta block text-center py-3 border border-mystic-gold text-mystic-gold text-sm tracking-widest uppercase rounded-full hover:bg-mystic-gold hover:text-cosmos transition">
-          Заказать
-        </a>
-      </article>
-
-      <!-- SERVICE 6 -->
-      <article class="glass-card rounded-2xl p-8 reveal relative">
-        <span class="absolute top-6 right-6 text-[10px] tracking-[0.2em] uppercase bg-mystic-gold text-cosmos px-3 py-1 font-semibold">Фундаментально</span>
-        <div class="w-14 h-14 rounded-full bg-gradient-to-br from-mystic-gold/30 to-mystic-gold/10 border border-mystic-gold/40 flex items-center justify-center mb-6">
-          <svg class="w-7 h-7 text-mystic-gold" fill="currentColor" viewBox="0 0 24 24">
-            <circle cx="12" cy="12" r="2"/>
-            <circle cx="6" cy="6" r="1.2"/><circle cx="18" cy="6" r="1.2"/>
-            <circle cx="6" cy="18" r="1.2"/><circle cx="18" cy="18" r="1.2"/>
-            <circle cx="12" cy="4" r="1"/><circle cx="12" cy="20" r="1"/>
-            <path d="M12 12l-4-4M12 12l4-4M12 12l-4 4M12 12l4 4" stroke="currentColor" stroke-width="0.5" fill="none"/>
-          </svg>
-        </div>
-        <h3 class="font-display text-3xl text-parchment mb-3">Натальная карта</h3>
-        <p class="text-parchment/70 mb-6 leading-relaxed">
-          Полный разбор вашей карты рождения. Основа для всех остальных прогнозов.
-        </p>
-        <div class="gold-divider mb-5"></div>
-        <ul class="space-y-2 mb-6 text-sm text-parchment/80">
-          <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> Полный анализ всех планет</li>
-          <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> 12 домов гороскопа</li>
-          <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> Кармические задачи (Лилит, Узлы)</li>
-          <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> Синастрия с партнёром (бонус)</li>
-          <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> PDF-отчёт (30+ страниц)</li>
-          <li class="flex items-center gap-2"><span class="text-mystic-gold">✓</span> 120-минутная консультация</li>
-        </ul>
-        <div class="flex items-end justify-between mb-6">
-          <div>
-            <div class="font-display text-4xl text-mystic-gold text-glow-gold">3 000 ₽</div>
-            <div class="text-xs text-moon-silver/60 tracking-wider uppercase mt-1">Длительность: 120 мин</div>
-          </div>
-        </div>
-        <a href="#booking" data-service="Натальная карта" class="service-cta block text-center py-3 border border-mystic-gold text-mystic-gold text-sm tracking-widest uppercase rounded-full hover:bg-mystic-gold hover:text-cosmos transition">
-          Заказать
-        </a>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<!-- ============================================
-     PROCESS
-     ============================================ -->
-<section id="process" class="py-24 md:py-32 relative">
-  <div class="container mx-auto px-6 md:px-12">
-    <div class="text-center mb-16 reveal">
-      <p class="font-mystic text-mystic-gold text-xs tracking-[0.35em] uppercase mb-4">Процесс</p>
-      <h2 class="font-display italic text-4xl md:text-6xl text-parchment text-glow-gold">
-        Путь к вашей карте
-      </h2>
-    </div>
-
-    <!-- Connecting line (desktop) -->
-    <div class="relative">
-      <div class="hidden lg:block absolute top-20 left-[12.5%] right-[12.5%] h-px gold-divider"></div>
-
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-        <!-- Step 1 -->
-        <div class="reveal text-center">
-          <div class="relative inline-block mb-6">
-            <div class="font-display text-6xl text-mystic-gold text-glow-gold">I</div>
-          </div>
-          <div class="glass-card rounded-2xl p-6">
-            <div class="w-12 h-12 rounded-full bg-mystic-gold/10 border border-mystic-gold/30 flex items-center justify-center mx-auto mb-4">
-              <svg class="w-6 h-6 text-mystic-gold" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+          <div class="glass rounded-2xl p-6 text-center reveal">
+            <div class="font-mystic text-5xl text-mystic-gold mb-4">I</div>
+            <div class="w-14 h-14 rounded-full bg-mystic-gold/10 border border-mystic-gold/40 flex items-center justify-center mx-auto mb-4">
+              <svg class="w-7 h-7 text-mystic-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                 <rect x="2" y="4" width="20" height="16" rx="2"/>
                 <path d="M2 7l10 6 10-6"/>
               </svg>
             </div>
-            <h3 class="font-display text-2xl text-parchment mb-2">Оставьте заявку</h3>
-            <p class="text-sm text-parchment/70 leading-relaxed">
-              Заполните форму с датой, временем и местом рождения — критически важно для точного расчёта
+            <h3 class="font-display text-xl md:text-2xl text-parchment mb-2">Напишите мне</h3>
+            <p class="text-parchment/70 text-sm leading-relaxed">
+              Выберите удобный способ связи: Telegram, WhatsApp или ВКонтакте. Напишите о своём запросе.
             </p>
           </div>
-        </div>
 
-        <!-- Step 2 -->
-        <div class="reveal text-center">
-          <div class="relative inline-block mb-6">
-            <div class="font-display text-6xl text-mystic-gold text-glow-gold">II</div>
-          </div>
-          <div class="glass-card rounded-2xl p-6">
-            <div class="w-12 h-12 rounded-full bg-mystic-gold/10 border border-mystic-gold/30 flex items-center justify-center mx-auto mb-4">
-              <svg class="w-6 h-6 text-mystic-gold" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="3"/>
-                <path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/>
+          <div class="glass rounded-2xl p-6 text-center reveal">
+            <div class="font-mystic text-5xl text-mystic-gold mb-4">II</div>
+            <div class="w-14 h-14 rounded-full bg-mystic-gold/10 border border-mystic-gold/40 flex items-center justify-center mx-auto mb-4">
+              <svg class="w-7 h-7 text-mystic-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="9" cy="15" r="5"/>
+                <path d="M13 11l7-7M17 4l3 3"/>
               </svg>
             </div>
-            <h3 class="font-display text-2xl text-parchment mb-2">Расчёт карты</h3>
-            <p class="text-sm text-parchment/70 leading-relaxed">
-              Я строю вашу натальную карту в профессиональной программе и провожу глубокий анализ
+            <h3 class="font-display text-xl md:text-2xl text-parchment mb-2">Расчёт карты</h3>
+            <p class="text-parchment/70 text-sm leading-relaxed">
+              Я строю вашу натальную карту в профессиональной программе. Вы присылаете дату, время и место рождения.
             </p>
           </div>
-        </div>
 
-        <!-- Step 3 -->
-        <div class="reveal text-center">
-          <div class="relative inline-block mb-6">
-            <div class="font-display text-6xl text-mystic-gold text-glow-gold">III</div>
-          </div>
-          <div class="glass-card rounded-2xl p-6">
-            <div class="w-12 h-12 rounded-full bg-mystic-gold/10 border border-mystic-gold/30 flex items-center justify-center mx-auto mb-4">
-              <svg class="w-6 h-6 text-mystic-gold" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16.8l-6.2 4.5 2.4-7.4L2 9.4h7.6z"/>
+          <div class="glass rounded-2xl p-6 text-center reveal">
+            <div class="font-mystic text-5xl text-mystic-gold mb-4">III</div>
+            <div class="w-14 h-14 rounded-full bg-mystic-gold/10 border border-mystic-gold/40 flex items-center justify-center mx-auto mb-4">
+              <svg class="w-7 h-7 text-mystic-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 2l2 6 6 1-4.5 4 1 6-4.5-3-4.5 3 1-6L4 9l6-1z"/>
               </svg>
             </div>
-            <h3 class="font-display text-2xl text-parchment mb-2">Онлайн-встреча</h3>
-            <p class="text-sm text-parchment/70 leading-relaxed">
-              Созваниваемся в Zoom или Telegram. Я рассказываю, отвечаю на вопросы, даю рекомендации
+            <h3 class="font-display text-xl md:text-2xl text-parchment mb-2">Онлайн-встреча</h3>
+            <p class="text-parchment/70 text-sm leading-relaxed">
+              Созваниваемся в Zoom или Telegram. Я рассказываю, отвечаю на вопросы, даю практические рекомендации.
             </p>
           </div>
-        </div>
 
-        <!-- Step 4 -->
-        <div class="reveal text-center">
-          <div class="relative inline-block mb-6">
-            <div class="font-display text-6xl text-mystic-gold text-glow-gold">IV</div>
-          </div>
-          <div class="glass-card rounded-2xl p-6">
-            <div class="w-12 h-12 rounded-full bg-mystic-gold/10 border border-mystic-gold/30 flex items-center justify-center mx-auto mb-4">
-              <svg class="w-6 h-6 text-mystic-gold" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                <polyline points="14 2 14 8 20 8"/>
-                <line x1="8" y1="13" x2="16" y2="13"/>
-                <line x1="8" y1="17" x2="13" y2="17"/>
+          <div class="glass rounded-2xl p-6 text-center reveal">
+            <div class="font-mystic text-5xl text-mystic-gold mb-4">IV</div>
+            <div class="w-14 h-14 rounded-full bg-mystic-gold/10 border border-mystic-gold/40 flex items-center justify-center mx-auto mb-4">
+              <svg class="w-7 h-7 text-mystic-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M5 3h10l4 4v14H5z"/>
+                <path d="M15 3v4h4"/>
+                <path d="M8 12h8M8 16h6"/>
               </svg>
             </div>
-            <h3 class="font-display text-2xl text-parchment mb-2">PDF-отчёт</h3>
-            <p class="text-sm text-parchment/70 leading-relaxed">
-              В течение 3 дней вы получаете подробный письменный отчёт со всеми выводами
+            <h3 class="font-display text-xl md:text-2xl text-parchment mb-2">PDF-отчёт</h3>
+            <p class="text-parchment/70 text-sm leading-relaxed">
+              В течение 3 дней вы получаете подробный письменный отчёт со всеми выводами и рекомендациями.
             </p>
           </div>
+
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ============================================
-     REVIEWS
-     ============================================ -->
-<section id="reviews" class="py-24 md:py-32 relative">
-  <div class="container mx-auto px-6 md:px-12">
-    <div class="text-center mb-16 reveal">
-      <p class="font-mystic text-mystic-gold text-xs tracking-[0.35em] uppercase mb-4">Отзывы</p>
-      <h2 class="font-display italic text-4xl md:text-6xl text-parchment text-glow-gold">
-        Истории клиентов
-      </h2>
-    </div>
-
-    <div class="grid md:grid-cols-3 gap-6 md:gap-8">
-
-      <!-- Review 1 -->
-      <article class="glass-card rounded-2xl p-8 reveal relative">
-        <div class="absolute top-6 right-6 font-display text-6xl text-mystic-gold/20 italic select-none leading-none">"</div>
-        <div class="flex mb-2 text-mystic-gold">
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 1l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.5 4.8 17.1l1-5.8L1.5 7.2l5.9-.9z"/></svg>
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 1l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.5 4.8 17.1l1-5.8L1.5 7.2l5.9-.9z"/></svg>
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 1l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.5 4.8 17.1l1-5.8L1.5 7.2l5.9-.9z"/></svg>
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 1l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.5 4.8 17.1l1-5.8L1.5 7.2l5.9-.9z"/></svg>
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 1l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.5 4.8 17.1l1-5.8L1.5 7.2l5.9-.9z"/></svg>
-        </div>
-        <div class="flex items-center gap-4 mb-6">
-          <div class="w-14 h-14 rounded-full bg-gradient-to-br from-deep-purple to-soft-violet/40 border border-mystic-gold/40 flex items-center justify-center font-display text-mystic-gold text-xl italic">
-            АК
-          </div>
-          <div>
-            <div class="font-display text-lg text-parchment">Анна К., 34 года</div>
-            <span class="inline-block text-[10px] tracking-wider uppercase bg-mystic-gold/10 text-mystic-gold border border-mystic-gold/30 px-2 py-0.5 rounded-full">Натальная карта</span>
-          </div>
-        </div>
-        <p class="text-parchment/80 leading-relaxed text-sm">
-          Елена потрясающий астролог! Она увидела в моей карте вещи, которые я знала о себе, но никогда не могла объяснить. Особенно ценным был анализ кармических задач — теперь понимаю, почему всю жизнь иду по определённому пути. Отчёт — 35 страниц, читаю и перечитываю.
-        </p>
-      </article>
-
-      <!-- Review 2 -->
-      <article class="glass-card rounded-2xl p-8 reveal relative">
-        <div class="absolute top-6 right-6 font-display text-6xl text-mystic-gold/20 italic select-none leading-none">"</div>
-        <div class="flex mb-2 text-mystic-gold">
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 1l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.5 4.8 17.1l1-5.8L1.5 7.2l5.9-.9z"/></svg>
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 1l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.5 4.8 17.1l1-5.8L1.5 7.2l5.9-.9z"/></svg>
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 1l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.5 4.8 17.1l1-5.8L1.5 7.2l5.9-.9z"/></svg>
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 1l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.5 4.8 17.1l1-5.8L1.5 7.2l5.9-.9z"/></svg>
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 1l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.5 4.8 17.1l1-5.8L1.5 7.2l5.9-.9z"/></svg>
-        </div>
-        <div class="flex items-center gap-4 mb-6">
-          <div class="w-14 h-14 rounded-full bg-gradient-to-br from-deep-purple to-soft-violet/40 border border-mystic-gold/40 flex items-center justify-center font-display text-mystic-gold text-xl italic">
-            ДМ
-          </div>
-          <div>
-            <div class="font-display text-lg text-parchment">Дмитрий М.</div>
-            <div class="text-xs text-moon-silver/60 mb-1">Предприниматель</div>
-            <span class="inline-block text-[10px] tracking-wider uppercase bg-mystic-gold/10 text-mystic-gold border border-mystic-gold/30 px-2 py-0.5 rounded-full">Финансы и капитал</span>
-          </div>
-        </div>
-        <p class="text-parchment/80 leading-relaxed text-sm">
-          Обратился скептически, но решил попробовать. Елена указала мне на лучший период для запуска нового проекта (октябрь-ноябрь) и сферы, где у меня наибольший потенциал. Запустил бизнес в декабре — уже через 4 месяца вышел на окупаемость. Совпадение? Не думаю.
-        </p>
-      </article>
-
-      <!-- Review 3 -->
-      <article class="glass-card rounded-2xl p-8 reveal relative">
-        <div class="absolute top-6 right-6 font-display text-6xl text-mystic-gold/20 italic select-none leading-none">"</div>
-        <div class="flex mb-2 text-mystic-gold">
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 1l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.5 4.8 17.1l1-5.8L1.5 7.2l5.9-.9z"/></svg>
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 1l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.5 4.8 17.1l1-5.8L1.5 7.2l5.9-.9z"/></svg>
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 1l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.5 4.8 17.1l1-5.8L1.5 7.2l5.9-.9z"/></svg>
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 1l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.5 4.8 17.1l1-5.8L1.5 7.2l5.9-.9z"/></svg>
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 1l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.5 4.8 17.1l1-5.8L1.5 7.2l5.9-.9z"/></svg>
-        </div>
-        <div class="flex items-center gap-4 mb-6">
-          <div class="w-14 h-14 rounded-full bg-gradient-to-br from-deep-purple to-soft-violet/40 border border-mystic-gold/40 flex items-center justify-center font-display text-mystic-gold text-xl italic">
-            ОС
-          </div>
-          <div>
-            <div class="font-display text-lg text-parchment">Ольга С.</div>
-            <div class="text-xs text-moon-silver/60 mb-1">Мама двоих детей</div>
-            <span class="inline-block text-[10px] tracking-wider uppercase bg-mystic-gold/10 text-mystic-gold border border-mystic-gold/30 px-2 py-0.5 rounded-full">Детский гороскоп</span>
-          </div>
-        </div>
-        <p class="text-parchment/80 leading-relaxed text-sm">
-          Заказала гороскоп для сына (7 лет). Елена дала такие точные рекомендации по обучению и развитию, что мы полностью изменили подход. Сын стал заниматься музыкой (о чём Елена и сказала) — сейчас не оторвать от фортепиано. Буду делать для младшей дочки.
-        </p>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<!-- ============================================
-     FAQ
-     ============================================ -->
-<section id="faq" class="py-24 md:py-32 relative">
-  <div class="container mx-auto px-6 md:px-12 max-w-3xl">
-    <div class="text-center mb-16 reveal">
-      <p class="font-mystic text-mystic-gold text-xs tracking-[0.35em] uppercase mb-4">FAQ</p>
-      <h2 class="font-display italic text-4xl md:text-6xl text-parchment text-glow-gold">
-        Частые вопросы
-      </h2>
-    </div>
-
-    <div class="space-y-4 reveal" id="faq-list">
-      <!-- Q1 -->
-      <div class="faq-item rounded-xl p-6 bg-deep-purple/30 cursor-pointer">
-        <div class="faq-question flex items-center justify-between gap-4">
-          <h3 class="font-display text-lg md:text-xl text-parchment">Астрология — это научно?</h3>
-          <span class="faq-icon text-mystic-gold text-2xl flex-shrink-0">+</span>
-        </div>
-        <div class="faq-content text-parchment/70 leading-relaxed">
-          Астрология — это древняя символическая система, которая существует более 5000 лет. Она не является наукой в современном понимании, но опирается на математические расчёты движения планет и многовековые наблюдения. Я работаю с ней как с инструментом самопознания.
-        </div>
+  <!-- ============================================
+       ОТЗЫВЫ
+       ============================================ -->
+  <section id="reviews" class="py-20 md:py-28 relative">
+    <div class="container mx-auto px-4 md:px-8 max-w-7xl">
+      <div class="text-center mb-16 reveal">
+        <p class="font-mystic text-mystic-gold text-xs tracking-mystic mb-3">✦ ОТЗЫВЫ ✦</p>
+        <h2 class="font-display italic text-4xl md:text-5xl lg:text-6xl text-parchment mb-4">
+          Истории клиентов
+        </h2>
+        <div class="w-24 h-px bg-mystic-gold mx-auto"></div>
       </div>
 
-      <!-- Q2 -->
-      <div class="faq-item rounded-xl p-6 bg-deep-purple/30 cursor-pointer">
-        <div class="faq-question flex items-center justify-between gap-4">
-          <h3 class="font-display text-lg md:text-xl text-parchment">Что нужно для консультации?</h3>
-          <span class="faq-icon text-mystic-gold text-2xl flex-shrink-0">+</span>
-        </div>
-        <div class="faq-content text-parchment/70 leading-relaxed">
-          Точная дата рождения (день, месяц, год), время рождения (желательно до минут) и место рождения (город). Если время неизвестно — я проведу ректификацию (восстановление времени по событиям жизни), это дополнительная услуга.
-        </div>
-      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
 
-      <!-- Q3 -->
-      <div class="faq-item rounded-xl p-6 bg-deep-purple/30 cursor-pointer">
-        <div class="faq-question flex items-center justify-between gap-4">
-          <h3 class="font-display text-lg md:text-xl text-parchment">Как проходит консультация?</h3>
-          <span class="faq-icon text-mystic-gold text-2xl flex-shrink-0">+</span>
-        </div>
-        <div class="faq-content text-parchment/70 leading-relaxed">
-          Онлайн через Zoom или Telegram-видео. Длительность зависит от выбранной услуги (от 30 минут до 2 часов). Я заранее изучаю вашу карту, во время встречи рассказываю и отвечаю на вопросы. Аудиозапись остаётся у вас.
-        </div>
-      </div>
+        <article class="glass rounded-2xl p-6 md:p-8 relative reveal">
+          <div class="absolute top-4 right-6 font-display text-6xl text-mystic-gold opacity-20 leading-none select-none">"</div>
 
-      <!-- Q4 -->
-      <div class="faq-item rounded-xl p-6 bg-deep-purple/30 cursor-pointer">
-        <div class="faq-question flex items-center justify-between gap-4">
-          <h3 class="font-display text-lg md:text-xl text-parchment">Можно ли заказать в подарок?</h3>
-          <span class="faq-icon text-mystic-gold text-2xl flex-shrink-0">+</span>
-        </div>
-        <div class="faq-content text-parchment/70 leading-relaxed">
-          Да! Я оформляю подарочные сертификаты с индивидуальным дизайном. Сертификат действителен 6 месяцев. Укажите в заявке "Хочу подарочный сертификат" — я пришлю красивый PDF с вашим именем.
-        </div>
-      </div>
+          <div class="flex gap-1 mb-4">
+            <svg class="w-5 h-5 text-mystic-gold" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16.8l-6.2 4.5 2.4-7.4L2 9.4h7.6z"/></svg>
+            <svg class="w-5 h-5 text-mystic-gold" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16.8l-6.2 4.5 2.4-7.4L2 9.4h7.6z"/></svg>
+            <svg class="w-5 h-5 text-mystic-gold" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16.8l-6.2 4.5 2.4-7.4L2 9.4h7.6z"/></svg>
+            <svg class="w-5 h-5 text-mystic-gold" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16.8l-6.2 4.5 2.4-7.4L2 9.4h7.6z"/></svg>
+            <svg class="w-5 h-5 text-mystic-gold" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16.8l-6.2 4.5 2.4-7.4L2 9.4h7.6z"/></svg>
+          </div>
 
-      <!-- Q5 -->
-      <div class="faq-item rounded-xl p-6 bg-deep-purple/30 cursor-pointer">
-        <div class="faq-question flex items-center justify-between gap-4">
-          <h3 class="font-display text-lg md:text-xl text-parchment">Что если мне не понравится консультация?</h3>
-          <span class="faq-icon text-mystic-gold text-2xl flex-shrink-0">+</span>
-        </div>
-        <div class="faq-content text-parchment/70 leading-relaxed">
-          За 10 лет работы у меня не было ни одного возврата. Но если вы почувствуете, что информация не resonates — я верну деньги в течение 24 часов без вопросов.
-        </div>
-      </div>
-
-      <!-- Q6 -->
-      <div class="faq-item rounded-xl p-6 bg-deep-purple/30 cursor-pointer">
-        <div class="faq-question flex items-center justify-between gap-4">
-          <h3 class="font-display text-lg md:text-xl text-parchment">Работаете ли вы с парами?</h3>
-          <span class="faq-icon text-mystic-gold text-2xl flex-shrink-0">+</span>
-        </div>
-        <div class="faq-content text-parchment/70 leading-relaxed">
-          Да, синастрия (совместимость) — одна из самых популярных услуг. Анализирую ваши карты на предмет сильных и слабых сторон отношений, даю практические рекомендации. Это отдельная услуга — спрашивайте при заявке.
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================
-     BOOKING FORM
-     ============================================ -->
-<section id="booking" class="py-24 md:py-32 relative overflow-hidden">
-  <!-- Background radial -->
-  <div class="absolute inset-0 bg-gradient-radial" style="background: radial-gradient(ellipse at center, rgba(167, 139, 250, 0.08) 0%, transparent 70%);"></div>
-  <!-- Decorative zodiac corners -->
-  <div class="absolute top-6 left-6 text-mystic-gold/20 text-4xl font-mystic hidden md:block">♄</div>
-  <div class="absolute top-6 right-6 text-mystic-gold/20 text-4xl font-mystic hidden md:block">♃</div>
-  <div class="absolute bottom-6 left-6 text-mystic-gold/20 text-4xl font-mystic hidden md:block">♂</div>
-  <div class="absolute bottom-6 right-6 text-mystic-gold/20 text-4xl font-mystic hidden md:block">♀</div>
-
-  <div class="container mx-auto px-6 md:px-12 max-w-4xl relative z-10">
-    <div class="text-center mb-12 reveal">
-      <p class="font-mystic text-mystic-gold text-xs tracking-[0.35em] uppercase mb-4">Запись</p>
-      <h2 class="font-display italic text-4xl md:text-6xl text-mystic-gold text-glow-gold mb-4">
-        Запишитесь на консультацию
-      </h2>
-      <p class="text-parchment/70 text-lg">
-        Заполните форму — я свяжусь с вами в течение 24 часов
-      </p>
-    </div>
-
-    <div class="glass-card rounded-2xl p-8 md:p-12 reveal">
-
-      <!-- Замени YOUR_FORM_ID на свой endpoint с formspree.io -->
-      <form id="booking-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-8" novalidate>
-        <input type="hidden" name="_subject" value="Новая заявка на консультацию — Управление Судьбой">
-
-        <!-- Contact info -->
-        <div>
-          <h3 class="font-mystic text-mystic-gold text-xs tracking-[0.3em] uppercase mb-5 flex items-center gap-2">
-            <span class="w-8 h-px bg-mystic-gold"></span> Контактные данные
-          </h3>
-          <div class="grid md:grid-cols-2 gap-5">
-            <div>
-              <label class="block text-sm text-parchment/80 mb-2">Ваше имя <span class="text-mystic-gold">*</span></label>
-              <input type="text" name="name" class="form-field w-full px-4 py-3 rounded-lg text-parchment" placeholder="Как к вам обращаться" required>
-              <div class="error-message"></div>
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-14 h-14 rounded-full bg-gradient-violet flex items-center justify-center border border-mystic-gold/40 flex-shrink-0">
+              <span class="font-mystic text-mystic-gold text-lg">АК</span>
             </div>
             <div>
-              <label class="block text-sm text-parchment/80 mb-2">Телефон <span class="text-mystic-gold">*</span></label>
-              <input type="tel" name="phone" class="form-field w-full px-4 py-3 rounded-lg text-parchment" placeholder="+7 (___) ___-__-__" required>
-              <div class="error-message"></div>
-            </div>
-            <div class="md:col-span-2">
-              <label class="block text-sm text-parchment/80 mb-2">Email</label>
-              <input type="email" name="email" class="form-field w-full px-4 py-3 rounded-lg text-parchment" placeholder="your@email.com">
-            </div>
-            <div class="md:col-span-2">
-              <label class="block text-sm text-parchment/80 mb-3">Предпочтительный способ связи</label>
-              <div class="flex flex-wrap gap-6">
-                <label class="flex items-center gap-2 cursor-pointer text-sm text-parchment/80">
-                  <input type="radio" name="contact_method" value="Telegram" class="radio-custom" checked> Telegram
-                </label>
-                <label class="flex items-center gap-2 cursor-pointer text-sm text-parchment/80">
-                  <input type="radio" name="contact_method" value="WhatsApp" class="radio-custom"> WhatsApp
-                </label>
-                <label class="flex items-center gap-2 cursor-pointer text-sm text-parchment/80">
-                  <input type="radio" name="contact_method" value="Звонок" class="radio-custom"> Звонок
-                </label>
-              </div>
+              <h4 class="font-display text-lg text-parchment">Анна К., 34 года</h4>
+              <span class="inline-block mt-1 px-2.5 py-0.5 bg-mystic-gold/10 border border-mystic-gold/30 text-mystic-gold text-xs font-mystic tracking-wider rounded-full">
+                Натальная карта
+              </span>
             </div>
           </div>
-        </div>
 
-        <!-- Birth data -->
-        <div>
-          <h3 class="font-mystic text-mystic-gold text-xs tracking-[0.3em] uppercase mb-5 flex items-center gap-2">
-            <span class="w-8 h-px bg-mystic-gold"></span> Данные рождения
-          </h3>
-          <div class="grid md:grid-cols-3 gap-5">
-            <div>
-              <label class="block text-sm text-parchment/80 mb-2">Дата рождения <span class="text-mystic-gold">*</span></label>
-              <input type="date" name="birth_date" class="form-field w-full px-4 py-3 rounded-lg text-parchment" required>
-              <div class="error-message"></div>
-            </div>
-            <div>
-              <label class="block text-sm text-parchment/80 mb-2">Время рождения</label>
-              <input type="time" name="birth_time" class="form-field w-full px-4 py-3 rounded-lg text-parchment" placeholder="ЧЧ:ММ">
-              <div class="text-xs text-moon-silver/50 mt-1">Если не знаете — оставьте пустым</div>
-            </div>
-            <div>
-              <label class="block text-sm text-parchment/80 mb-2">Место рождения <span class="text-mystic-gold">*</span></label>
-              <input type="text" name="birth_place" class="form-field w-full px-4 py-3 rounded-lg text-parchment" placeholder="Город, страна" required>
-              <div class="error-message"></div>
-            </div>
-          </div>
-          <p class="text-xs text-moon-silver/50 mt-4 flex items-start gap-2">
-            <span class="text-mystic-gold">⚠</span>
-            <span>Точные данные рождения критически важны для корректного расчёта карты</span>
+          <p class="text-parchment/80 text-sm leading-relaxed">
+            Айнура потрясающий астролог! Она увидела в моей карте вещи, которые я знала о себе, но никогда не могла объяснить. Особенно ценным был анализ кармических задач — теперь понимаю, почему всю жизнь иду по определённому пути. Отчёт — 35 страниц, читаю и перечитываю.
           </p>
-        </div>
+        </article>
 
-        <!-- Service -->
-        <div>
-          <h3 class="font-mystic text-mystic-gold text-xs tracking-[0.3em] uppercase mb-5 flex items-center gap-2">
-            <span class="w-8 h-px bg-mystic-gold"></span> Услуга
-          </h3>
-          <div class="space-y-5">
-            <div>
-              <label class="block text-sm text-parchment/80 mb-2">Выберите услугу <span class="text-mystic-gold">*</span></label>
-              <select name="service" id="service-select" class="form-field w-full px-4 py-3 rounded-lg text-parchment" required>
-                <option value="">— Выберите —</option>
-                <option value="Блиц-ответ">Блиц-ответ (777 ₽)</option>
-                <option value="Любой вопрос">Любой вопрос (3 000 ₽)</option>
-                <option value="Детский гороскоп">Детский гороскоп (3 000 ₽)</option>
-                <option value="Прогноз на год">Прогноз на год (3 000 ₽)</option>
-                <option value="Финансы, капитал">Финансы и капитал (3 000 ₽)</option>
-                <option value="Натальная карта">Натальная карта (3 000 ₽)</option>
-                <option value="Подарочный сертификат">Подарочный сертификат</option>
-              </select>
-              <div class="error-message"></div>
+        <article class="glass rounded-2xl p-6 md:p-8 relative reveal">
+          <div class="absolute top-4 right-6 font-display text-6xl text-mystic-gold opacity-20 leading-none select-none">"</div>
+
+          <div class="flex gap-1 mb-4">
+            <svg class="w-5 h-5 text-mystic-gold" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16.8l-6.2 4.5 2.4-7.4L2 9.4h7.6z"/></svg>
+            <svg class="w-5 h-5 text-mystic-gold" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16.8l-6.2 4.5 2.4-7.4L2 9.4h7.6z"/></svg>
+            <svg class="w-5 h-5 text-mystic-gold" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16.8l-6.2 4.5 2.4-7.4L2 9.4h7.6z"/></svg>
+            <svg class="w-5 h-5 text-mystic-gold" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16.8l-6.2 4.5 2.4-7.4L2 9.4h7.6z"/></svg>
+            <svg class="w-5 h-5 text-mystic-gold" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16.8l-6.2 4.5 2.4-7.4L2 9.4h7.6z"/></svg>
+          </div>
+
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-14 h-14 rounded-full bg-gradient-violet flex items-center justify-center border border-mystic-gold/40 flex-shrink-0">
+              <span class="font-mystic text-mystic-gold text-lg">ДМ</span>
             </div>
             <div>
-              <label class="block text-sm text-parchment/80 mb-2">Ваш вопрос или описание ситуации</label>
-              <textarea name="message" rows="4" class="form-field w-full px-4 py-3 rounded-lg text-parchment resize-none" placeholder="Опишите вашу ситуацию или вопрос..."></textarea>
+              <h4 class="font-display text-lg text-parchment">Дмитрий М.</h4>
+              <span class="inline-block mt-1 px-2.5 py-0.5 bg-mystic-gold/10 border border-mystic-gold/30 text-mystic-gold text-xs font-mystic tracking-wider rounded-full">
+                Финансы и капитал
+              </span>
             </div>
           </div>
-        </div>
 
-        <!-- Consent -->
-        <label class="flex items-start gap-3 cursor-pointer text-sm text-parchment/70">
-          <input type="checkbox" name="consent" class="check-custom mt-0.5" required>
-          <span>Согласен на <a href="#" class="text-mystic-gold underline">обработку персональных данных</a> и принимаю политику конфиденциальности</span>
-        </label>
-
-        <button type="submit" id="submit-btn" class="w-full py-4 bg-mystic-gold text-cosmos font-semibold tracking-[0.25em] text-sm uppercase rounded-full gold-glow hover:bg-mystic-gold-dark transition flex items-center justify-center gap-2">
-          <span>✦</span>
-          <span>Отправить заявку</span>
-        </button>
-
-        <!-- Inline form error -->
-        <div id="form-error" class="hidden p-4 rounded-lg bg-red-950/30 border border-red-500/30 text-red-300 text-sm text-center"></div>
-      </form>
-
-      <!-- Success state -->
-      <div id="form-success" class="hidden text-center py-12">
-        <div class="w-24 h-24 mx-auto mb-6 relative">
-          <svg class="w-full h-full moon-glow" viewBox="0 0 100 100" fill="none">
-            <defs>
-              <radialGradient id="successMoon" cx="35%" cy="35%">
-                <stop offset="0%" stop-color="#f5e6a8"/>
-                <stop offset="60%" stop-color="#d4af37"/>
-                <stop offset="100%" stop-color="#8b6f1f"/>
-              </radialGradient>
-            </defs>
-            <circle cx="50" cy="50" r="45" fill="url(#successMoon)"/>
-            <circle cx="65" cy="40" r="40" fill="#0a0a1f"/>
-          </svg>
-          <svg class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 text-mystic-gold" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
-            <polyline points="20 6 9 17 4 12"/>
-          </svg>
-        </div>
-        <h3 class="font-display italic text-3xl text-mystic-gold mb-4 text-glow-gold">Ваша заявка принята!</h3>
-        <p class="text-parchment/80 mb-6 max-w-md mx-auto">
-          Я свяжусь с вами в течение 24 часов для уточнения деталей и согласования времени консультации.
-        </p>
-        <button id="reset-form-btn" class="px-8 py-3 border border-mystic-gold text-mystic-gold text-sm tracking-widest uppercase rounded-full hover:bg-mystic-gold/10 transition">
-          Отправить ещё заявку
-        </button>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================
-     CONTACTS
-     ============================================ -->
-<section id="contacts" class="py-24 md:py-32 relative">
-  <div class="container mx-auto px-6 md:px-12">
-    <div class="text-center mb-16 reveal">
-      <p class="font-mystic text-mystic-gold text-xs tracking-[0.35em] uppercase mb-4">Контакты</p>
-      <h2 class="font-display italic text-4xl md:text-6xl text-parchment text-glow-gold">
-        Связаться со мной
-      </h2>
-    </div>
-
-    <div class="grid md:grid-cols-3 gap-8">
-      <!-- Block 1: Contact -->
-      <div class="glass-card rounded-2xl p-8 reveal text-center">
-        <div class="w-14 h-14 rounded-full bg-mystic-gold/10 border border-mystic-gold/30 flex items-center justify-center mx-auto mb-5">
-          <svg class="w-6 h-6 text-mystic-gold" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/>
-          </svg>
-        </div>
-        <h3 class="font-mystic text-xs tracking-[0.25em] uppercase text-mystic-gold mb-3">Телефон</h3>
-        <a href="tel:+79062693247" class="block font-display text-2xl md:text-3xl text-mystic-gold text-glow-gold mb-4 hover:opacity-80 transition">
-          +7 906 269 3247
-        </a>
-        <p class="text-sm text-parchment/70">Ежедневно с 10:00 до 21:00 (МСК)</p>
-        <p class="text-xs text-moon-silver/60 mt-1">Ответ в течение 24 часов</p>
-      </div>
-
-      <!-- Block 2: Social -->
-      <div class="glass-card rounded-2xl p-8 reveal">
-        <h3 class="font-mystic text-xs tracking-[0.25em] uppercase text-mystic-gold mb-5 text-center">Социальные сети</h3>
-
-        <a href="https://t.me/managerofdestiny" target="_blank" rel="noopener" class="flex items-center gap-4 p-4 rounded-lg hover:bg-mystic-gold/5 transition group mb-3">
-          <div class="w-12 h-12 rounded-full bg-mystic-gold/10 border border-mystic-gold/30 flex items-center justify-center flex-shrink-0 group-hover:gold-glow transition">
-            <svg class="w-6 h-6 text-mystic-gold" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 0 0-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
-            </svg>
-          </div>
-          <div class="min-w-0 flex-1">
-            <div class="text-mystic-gold font-medium truncate">t.me/managerofdestiny</div>
-            <div class="text-xs text-parchment/60 mt-0.5">Еженедельные прогнозы и разборы</div>
-          </div>
-        </a>
-
-        <a href="https://vk.com/stars_destiny" target="_blank" rel="noopener" class="flex items-center gap-4 p-4 rounded-lg hover:bg-mystic-gold/5 transition group">
-          <div class="w-12 h-12 rounded-full bg-mystic-gold/10 border border-mystic-gold/30 flex items-center justify-center flex-shrink-0 group-hover:gold-glow transition">
-            <svg class="w-6 h-6 text-mystic-gold" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M15.07 2H8.93C3.33 2 2 3.33 2 8.93v6.14C2 20.67 3.33 22 8.93 22h6.14c5.6 0 6.93-1.33 6.93-6.93V8.93C22 3.33 20.67 2 15.07 2zm3.08 14.27h-1.72c-.65 0-.85-.52-2.05-1.71-1.03-1-1.47-1.13-1.72-1.13-.35 0-.45.1-.45.59v1.56c0 .41-.13.66-1.21.66-1.79 0-3.89-1.09-5.36-3.1C3.5 10.47 2.9 8.33 2.9 7.86c0-.25.1-.48.59-.48h1.71c.44 0 .61.2.78.68.86 2.48 2.3 4.67 2.9 4.67.22 0 .31-.1.31-.66V9.72c-.07-1.14-.66-1.23-.66-1.64 0-.2.17-.4.44-.4h2.69c.37 0 .5.2.5.64v3.47c0 .37.17.5.27.5.22 0 .41-.13.82-.54 1.27-1.42 2.17-3.61 2.17-3.61.12-.25.32-.48.76-.48h1.72c.52 0 .63.26.52.64-.22 1.02-2.35 4.03-2.35 4.03-.19.29-.25.43 0 .78.18.24.79.78 1.2 1.25.75.84 1.32 1.55 1.47 2.04.16.48-.09.73-.58.73z"/>
-            </svg>
-          </div>
-          <div class="min-w-0 flex-1">
-            <div class="text-mystic-gold font-medium truncate">vk.com/stars_destiny</div>
-            <div class="text-xs text-parchment/60 mt-0.5">Отзывы и бесплатные материалы</div>
-          </div>
-        </a>
-      </div>
-
-      <!-- Block 3: Telegram CTA -->
-      <div class="reveal rounded-2xl p-8 bg-gradient-to-br from-deep-purple to-mystic-gold/10 border border-mystic-gold/40 text-center relative overflow-hidden">
-        <div class="absolute top-0 right-0 w-32 h-32 opacity-10">
-          <svg viewBox="0 0 100 100" fill="none">
-            <circle cx="50" cy="50" r="45" stroke="#d4af37" stroke-width="1"/>
-            <circle cx="50" cy="50" r="30" stroke="#d4af37" stroke-width="1"/>
-          </svg>
-        </div>
-        <div class="relative z-10">
-          <div class="w-14 h-14 rounded-full bg-mystic-gold/20 border border-mystic-gold/40 flex items-center justify-center mx-auto mb-5">
-            <svg class="w-6 h-6 text-mystic-gold" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 0 0-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
-            </svg>
-          </div>
-          <h3 class="font-display italic text-2xl text-parchment mb-3">Подпишитесь на Telegram-канал</h3>
-          <p class="text-sm text-parchment/70 mb-6 leading-relaxed">
-            Бесплатные прогнозы на неделю, лунные календари, интересные разборы
+          <p class="text-parchment/80 text-sm leading-relaxed">
+            Обратился скептически, но решил попробовать. Айнура указала мне на лучший период для запуска нового проекта (октябрь-ноябрь) и сферы, где у меня наибольший потенциал. Запустил бизнес в декабре — уже через 4 месяца вышел на окупаемость.
           </p>
-          <a href="https://t.me/managerofdestiny" target="_blank" rel="noopener" class="inline-block px-8 py-3 bg-mystic-gold text-cosmos text-xs tracking-[0.25em] uppercase font-semibold rounded-full gold-glow hover:bg-mystic-gold-dark transition">
-            Подписаться
+        </article>
+
+        <article class="glass rounded-2xl p-6 md:p-8 relative reveal">
+          <div class="absolute top-4 right-6 font-display text-6xl text-mystic-gold opacity-20 leading-none select-none">"</div>
+
+          <div class="flex gap-1 mb-4">
+            <svg class="w-5 h-5 text-mystic-gold" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16.8l-6.2 4.5 2.4-7.4L2 9.4h7.6z"/></svg>
+            <svg class="w-5 h-5 text-mystic-gold" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16.8l-6.2 4.5 2.4-7.4L2 9.4h7.6z"/></svg>
+            <svg class="w-5 h-5 text-mystic-gold" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16.8l-6.2 4.5 2.4-7.4L2 9.4h7.6z"/></svg>
+            <svg class="w-5 h-5 text-mystic-gold" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16.8l-6.2 4.5 2.4-7.4L2 9.4h7.6z"/></svg>
+            <svg class="w-5 h-5 text-mystic-gold" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16.8l-6.2 4.5 2.4-7.4L2 9.4h7.6z"/></svg>
+          </div>
+
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-14 h-14 rounded-full bg-gradient-violet flex items-center justify-center border border-mystic-gold/40 flex-shrink-0">
+              <span class="font-mystic text-mystic-gold text-lg">ОС</span>
+            </div>
+            <div>
+              <h4 class="font-display text-lg text-parchment">Ольга С.</h4>
+              <span class="inline-block mt-1 px-2.5 py-0.5 bg-mystic-gold/10 border border-mystic-gold/30 text-mystic-gold text-xs font-mystic tracking-wider rounded-full">
+                Детский гороскоп
+              </span>
+            </div>
+          </div>
+
+          <p class="text-parchment/80 text-sm leading-relaxed">
+            Заказала гороскоп для сына (7 лет). Айнура дала такие точные рекомендации по обучению и развитию, что мы полностью изменили подход. Сын стал заниматься музыкой (о чём она и сказала) — сейчас не оторвать от фортепиано.
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       БЛОК "СВЯЗЬ" — ГЛАВНЫЙ CTA
+       ============================================ -->
+  <section id="contact" class="py-20 md:py-28 relative overflow-hidden">
+    <!-- Декоративные знаки зодиака -->
+    <div class="absolute top-10 left-10 text-mystic-gold/20 text-4xl hidden md:block">♈</div>
+    <div class="absolute top-10 right-10 text-mystic-gold/20 text-4xl hidden md:block">♎</div>
+    <div class="absolute bottom-10 left-10 text-mystic-gold/20 text-4xl hidden md:block">♋</div>
+    <div class="absolute bottom-10 right-10 text-mystic-gold/20 text-4xl hidden md:block">♑</div>
+
+    <div class="container mx-auto px-4 md:px-8 max-w-5xl relative z-10">
+      <div class="text-center mb-12 reveal">
+        <p class="font-mystic text-mystic-gold text-xs tracking-mystic mb-3">✦ СВЯЗЬ ✦</p>
+        <h2 class="font-display italic text-4xl md:text-5xl lg:text-6xl text-parchment mb-4">
+          Записаться на <span class="text-mystic-gold">консультацию</span>
+        </h2>
+        <p class="text-parchment/70 text-base md:text-lg max-w-2xl mx-auto">
+          Выберите удобный способ связи. Я отвечаю в течение 24 часов.
+        </p>
+        <div class="w-24 h-px bg-mystic-gold mx-auto mt-6"></div>
+      </div>
+
+      <!-- Три большие кнопки-ссылки -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6 justify-items-center reveal">
+
+        <!-- Telegram -->
+        <a href="https://t.me/managerofdestiny" target="_blank" rel="noopener noreferrer" class="social-btn telegram w-full max-w-sm" id="btn-telegram">
+          <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/>
+          </svg>
+          <span class="social-label">Написать в Telegram</span>
+          <span class="social-sublabel">@managerofdestiny</span>
+        </a>
+
+        <!-- WhatsApp -->
+        <a href="https://wa.me/79062693247" target="_blank" rel="noopener noreferrer" class="social-btn whatsapp w-full max-w-sm" id="btn-whatsapp">
+          <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+          </svg>
+          <span class="social-label">WhatsApp</span>
+          <span class="social-sublabel">+7 906 269-32-47</span>
+        </a>
+
+        <!-- ВКонтакте -->
+        <a href="https://vk.com/stars_destiny" target="_blank" rel="noopener noreferrer" class="social-btn vk w-full max-w-sm" id="btn-vk">
+          <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M15.07 2H8.93C3.33 2 2 3.33 2 8.93v6.14C2 20.67 3.33 22 8.93 22h6.14c5.6 0 6.93-1.33 6.93-6.93V8.93C22 3.33 20.67 2 15.07 2zm3.08 14.27h-1.46c-.55 0-.72-.44-1.71-1.44-.87-.83-1.24-.94-1.46-.94-.3 0-.39.09-.39.5v1.31c0 .36-.11.58-1.06.58-1.56 0-3.29-.94-4.5-2.71C5.78 11.05 5.2 8.9 5.2 8.47c0-.22.09-.41.5-.41h1.46c.37 0 .5.17.65.54.7 1.97 1.84 3.69 2.32 3.69.17 0 .26-.09.26-.54V9.7c-.07-1.06-.65-1.15-.65-1.53 0-.17.15-.36.37-.36h2.3c.3 0 .41.15.41.5v2.87c0 .3.13.41.22.41.17 0 .33-.11.65-.44.99-1.1 1.7-2.8 1.7-2.8.09-.22.26-.41.63-.41h1.46c.44 0 .53.22.44.5-.19.83-1.85 3.15-1.85 3.15-.15.22-.2.33 0 .61.15.22.63.63.96 1 .61.71 1.07 1.31 1.2 1.72.15.41-.07.63-.5.63z"/>
+          </svg>
+          <span class="social-label">Группа ВКонтакте</span>
+          <span class="social-sublabel">vk.com/stars_destiny</span>
+        </a>
+
+      </div>
+
+      <!-- Дополнительная информация -->
+      <div class="mt-10 text-center reveal">
+        <div class="inline-flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 px-6 py-4 glass rounded-2xl">
+          <a href="tel:+79062693247" class="flex items-center gap-2 text-parchment hover:text-mystic-gold transition-colors">
+            <svg class="w-5 h-5 text-mystic-gold" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
+            </svg>
+            <span class="font-display text-lg">+7 906 269 32 47</span>
           </a>
+          <div class="hidden sm:block w-px h-6 bg-mystic-gold/30"></div>
+          <p class="text-parchment/70 text-sm flex items-center gap-2">
+            <svg class="w-4 h-4 text-mystic-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M12 6v6l4 2"/>
+            </svg>
+            Ежедневно с 10:00 до 21:00 (МСК)
+          </p>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <!-- ============================================
+       FAQ
+       ============================================ -->
+  <section id="faq" class="py-20 md:py-28 relative">
+    <div class="container mx-auto px-4 md:px-8 max-w-3xl">
+      <div class="text-center mb-16 reveal">
+        <p class="font-mystic text-mystic-gold text-xs tracking-mystic mb-3">✦ ВОПРОСЫ ✦</p>
+        <h2 class="font-display italic text-4xl md:text-5xl lg:text-6xl text-parchment mb-4">
+          Частые вопросы
+        </h2>
+        <div class="w-24 h-px bg-mystic-gold mx-auto"></div>
+      </div>
+
+      <div class="space-y-4">
+
+        <div class="faq-item glass rounded-xl p-5 md:p-6 border-l-2 border-l-transparent cursor-pointer reveal">
+          <div class="faq-question flex items-center justify-between gap-4">
+            <h3 class="font-display text-lg md:text-xl text-parchment">Астрология — это научно?</h3>
+            <span class="faq-icon text-mystic-gold text-2xl leading-none flex-shrink-0">+</span>
+          </div>
+          <div class="faq-answer text-parchment/80 text-sm md:text-base leading-relaxed">
+            Астрология — это древняя символическая система, существующая более 5000 лет. Она не является наукой в современном понимании, но опирается на математические расчёты движения планет и многовековые наблюдения. Я работаю с ней как с инструментом самопознания.
+          </div>
+        </div>
+
+        <div class="faq-item glass rounded-xl p-5 md:p-6 border-l-2 border-l-transparent cursor-pointer reveal">
+          <div class="faq-question flex items-center justify-between gap-4">
+            <h3 class="font-display text-lg md:text-xl text-parchment">Что нужно для консультации?</h3>
+            <span class="faq-icon text-mystic-gold text-2xl leading-none flex-shrink-0">+</span>
+          </div>
+          <div class="faq-answer text-parchment/80 text-sm md:text-base leading-relaxed">
+            Точная дата рождения (день, месяц, год), время рождения (желательно до минут) и место рождения (город). Если время неизвестно — я проведу ректификацию (восстановление времени по событиям жизни).
+          </div>
+        </div>
+
+        <div class="faq-item glass rounded-xl p-5 md:p-6 border-l-2 border-l-transparent cursor-pointer reveal">
+          <div class="faq-question flex items-center justify-between gap-4">
+            <h3 class="font-display text-lg md:text-xl text-parchment">Как проходит консультация?</h3>
+            <span class="faq-icon text-mystic-gold text-2xl leading-none flex-shrink-0">+</span>
+          </div>
+          <div class="faq-answer text-parchment/80 text-sm md:text-base leading-relaxed">
+            Онлайн через Zoom или Telegram-видео. Длительность зависит от услуги (от 30 минут до 2 часов). Я заранее изучаю вашу карту, во время встречи рассказываю и отвечаю на вопросы. Аудиозапись остаётся у вас.
+          </div>
+        </div>
+
+        <div class="faq-item glass rounded-xl p-5 md:p-6 border-l-2 border-l-transparent cursor-pointer reveal">
+          <div class="faq-question flex items-center justify-between gap-4">
+            <h3 class="font-display text-lg md:text-xl text-parchment">Можно ли заказать в подарок?</h3>
+            <span class="faq-icon text-mystic-gold text-2xl leading-none flex-shrink-0">+</span>
+          </div>
+          <div class="faq-answer text-parchment/80 text-sm md:text-base leading-relaxed">
+            Да! Оформляю подарочные сертификаты. Сертификат действителен 6 месяцев. Укажите в сообщении «Хочу подарочный сертификат» — пришлю красивый PDF.
+          </div>
+        </div>
+
+        <div class="faq-item glass rounded-xl p-5 md:p-6 border-l-2 border-l-transparent cursor-pointer reveal">
+          <div class="faq-question flex items-center justify-between gap-4">
+            <h3 class="font-display text-lg md:text-xl text-parchment">Что если мне не подойдёт консультация?</h3>
+            <span class="faq-icon text-mystic-gold text-2xl leading-none flex-shrink-0">+</span>
+          </div>
+          <div class="faq-answer text-parchment/80 text-sm md:text-base leading-relaxed">
+            За всё время практики у меня не было ни одного возврата. Но если вы почувствуете, что информация вам не подходит — я верну деньги в течение 24 часов без вопросов.
+          </div>
+        </div>
+
+        <div class="faq-item glass rounded-xl p-5 md:p-6 border-l-2 border-l-transparent cursor-pointer reveal">
+          <div class="faq-question flex items-center justify-between gap-4">
+            <h3 class="font-display text-lg md:text-xl text-parchment">Работаете ли вы с парами?</h3>
+            <span class="faq-icon text-mystic-gold text-2xl leading-none flex-shrink-0">+</span>
+          </div>
+          <div class="faq-answer text-parchment/80 text-sm md:text-base leading-relaxed">
+            Да, синастрия (совместимость) — одна из самых популярных услуг. Анализирую ваши карты на предмет сильных и слабых сторон отношений. Это отдельная услуга — спрашивайте при заявке.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
 
 </main>
 
 <!-- ============================================
      FOOTER
      ============================================ -->
-<footer class="relative pt-16 pb-8 border-t border-mystic-gold/10">
-  <div class="container mx-auto px-6 md:px-12">
-    <div class="grid md:grid-cols-3 gap-10 mb-12">
-      <!-- Logo -->
+<footer class="relative border-t border-mystic-gold/20 pt-16 pb-8">
+  <div class="container mx-auto px-4 md:px-8 max-w-6xl">
+    <div class="grid md:grid-cols-3 gap-10 md:gap-8 mb-12">
+
       <div>
-        <div class="font-mystic text-mystic-gold text-sm tracking-[0.25em] flex items-center gap-2 mb-3">
-          <span>✦</span> УПРАВЛЕНИЕ СУДЬБОЙ
+        <div class="flex items-center gap-2 mb-3">
+          <svg class="w-5 h-5 text-mystic-gold" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16.8l-6.2 4.5 2.4-7.4L2 9.4h7.6z"/>
+          </svg>
+          <span class="font-mystic text-mystic-gold text-sm tracking-mystic">УПРАВЛЕНИЕ СУДЬБОЙ</span>
         </div>
-        <p class="font-display italic text-parchment/60 text-lg">
-          Путь к себе через звёзды
+        <p class="font-display italic text-parchment/80 text-base">
+          Айнура Батталова · путь к себе через звёзды
+        </p>
+        <p class="text-parchment/50 text-sm mt-4 leading-relaxed">
+          Профессиональные астрологические консультации онлайн. Более 500 клиентов, западный и ведический подход.
         </p>
       </div>
 
-      <!-- Nav -->
       <div>
-        <h4 class="font-mystic text-xs tracking-[0.25em] uppercase text-mystic-gold mb-4">Навигация</h4>
+        <h4 class="font-mystic text-parchment text-xs tracking-mystic mb-4">НАВИГАЦИЯ</h4>
         <ul class="space-y-2 text-sm text-parchment/70">
-          <li><a href="#about" class="hover:text-mystic-gold transition">Обо мне</a></li>
-          <li><a href="#services" class="hover:text-mystic-gold transition">Услуги</a></li>
-          <li><a href="#reviews" class="hover:text-mystic-gold transition">Отзывы</a></li>
-          <li><a href="#faq" class="hover:text-mystic-gold transition">FAQ</a></li>
-          <li><a href="#contacts" class="hover:text-mystic-gold transition">Контакты</a></li>
+          <li><a href="#about" class="hover:text-mystic-gold transition-colors">Обо мне</a></li>
+          <li><a href="#services" class="hover:text-mystic-gold transition-colors">Услуги</a></li>
+          <li><a href="#reviews" class="hover:text-mystic-gold transition-colors">Отзывы</a></li>
+          <li><a href="#faq" class="hover:text-mystic-gold transition-colors">FAQ</a></li>
+          <li><a href="#contact" class="hover:text-mystic-gold transition-colors">Связь</a></li>
         </ul>
       </div>
 
-      <!-- Contacts -->
       <div>
-        <h4 class="font-mystic text-xs tracking-[0.25em] uppercase text-mystic-gold mb-4">Контакты</h4>
+        <h4 class="font-mystic text-parchment text-xs tracking-mystic mb-4">КОНТАКТЫ</h4>
         <ul class="space-y-2 text-sm text-parchment/70">
-          <li><a href="tel:+79062693247" class="hover:text-mystic-gold transition">+7 906 269 3247</a></li>
-          <li><a href="https://t.me/managerofdestiny" target="_blank" rel="noopener" class="hover:text-mystic-gold transition">t.me/managerofdestiny</a></li>
-          <li><a href="https://vk.com/stars_destiny" target="_blank" rel="noopener" class="hover:text-mystic-gold transition">vk.com/stars_destiny</a></li>
+          <li><a href="tel:+79062693247" class="hover:text-mystic-gold transition-colors">+7 906 269 32 47</a></li>
+          <li><a href="https://t.me/managerofdestiny" target="_blank" rel="noopener noreferrer" class="hover:text-mystic-gold transition-colors">@managerofdestiny</a></li>
+          <li><a href="https://vk.com/stars_destiny" target="_blank" rel="noopener noreferrer" class="hover:text-mystic-gold transition-colors">vk.com/stars_destiny</a></li>
+          <li><a href="https://wa.me/79062693247" target="_blank" rel="noopener noreferrer" class="hover:text-mystic-gold transition-colors">WhatsApp</a></li>
         </ul>
       </div>
     </div>
 
-    <!-- Zodiac line -->
-    <div class="flex justify-center gap-2 md:gap-6 text-mystic-gold/30 text-lg md:text-xl mb-6 font-mystic">
+    <!-- Zodiac row -->
+    <div class="flex justify-center items-center gap-3 md:gap-5 text-mystic-gold/30 text-lg md:text-xl mb-6">
       <span>♈</span><span>♉</span><span>♊</span><span>♋</span><span>♌</span><span>♍</span>
       <span>♎</span><span>♏</span><span>♐</span><span>♑</span><span>♒</span><span>♓</span>
     </div>
 
-    <div class="gold-divider mb-6"></div>
-
-    <div class="text-center text-xs text-parchment/50 space-y-2">
-      <p>© 2024 "Управление Судьбой". Все права защищены.</p>
-      <p class="max-w-2xl mx-auto">
-        Астрологические консультации не заменяют медицинскую, юридическую или финансовую помощь специалиста.
-      </p>
+    <div class="text-center text-xs text-parchment/40 space-y-2">
+      <p>© 2024 «Управление Судьбой» · Айнура Батталова. Все права защищены.</p>
+      <p class="italic">Астрологические консультации не заменяют медицинскую, юридическую или финансовую помощь специалиста.</p>
     </div>
   </div>
 </footer>
-
-<!-- ============================================
-     SUCCESS MODAL
-     ============================================ -->
-<div id="success-modal" class="modal-overlay" role="dialog" aria-modal="true">
-  <div class="modal-content">
-    <div class="w-24 h-24 mx-auto mb-6 relative">
-      <svg class="w-full h-full moon-glow" viewBox="0 0 100 100" fill="none">
-        <defs>
-          <radialGradient id="modalMoon" cx="35%" cy="35%">
-            <stop offset="0%" stop-color="#f5e6a8"/>
-            <stop offset="60%" stop-color="#d4af37"/>
-            <stop offset="100%" stop-color="#8b6f1f"/>
-          </radialGradient>
-        </defs>
-        <circle cx="50" cy="50" r="45" fill="url(#modalMoon)"/>
-        <circle cx="65" cy="40" r="40" fill="#0a0a1f"/>
-      </svg>
-      <svg class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 text-mystic-gold" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" viewBox="0 0 24 24">
-        <polyline points="20 6 9 17 4 12"/>
-      </svg>
-    </div>
-    <h3 class="font-display italic text-3xl text-mystic-gold mb-4 text-glow-gold">Ваша заявка принята!</h3>
-    <p class="text-parchment/80 mb-8">
-      Я свяжусь с вами в течение 24 часов для уточнения деталей.
-    </p>
-    <button id="modal-close" class="px-8 py-3 bg-mystic-gold text-cosmos text-xs tracking-[0.25em] uppercase font-semibold rounded-full hover:bg-mystic-gold-dark transition">
-      Хорошо
-    </button>
-  </div>
-</div>
 
 <!-- ============================================
      JAVASCRIPT
@@ -1306,47 +1103,151 @@
 (function() {
   'use strict';
 
-  // === Генератор звёзд ===
+  // ==========================================
+  // 1. Генератор звёзд (120 штук)
+  // ==========================================
   const starsContainer = document.getElementById('stars-container');
-  const STAR_COUNT = 130;
+  const STAR_COUNT = 120;
   const fragment = document.createDocumentFragment();
+
   for (let i = 0; i < STAR_COUNT; i++) {
     const star = document.createElement('div');
     star.className = 'star';
-    const size = Math.random() * 2.5 + 0.5;
+    const size = Math.random() * 2 + 0.5;
     star.style.cssText = `
       width: ${size}px;
       height: ${size}px;
       top: ${Math.random() * 100}%;
       left: ${Math.random() * 100}%;
-      --dur: ${Math.random() * 4 + 2}s;
-      --delay: ${Math.random() * 5}s;
+      animation: twinkle ${2 + Math.random() * 3}s ${Math.random() * 3}s ease-in-out infinite;
+      opacity: ${Math.random() * 0.5 + 0.3};
     `;
     fragment.appendChild(star);
   }
   starsContainer.appendChild(fragment);
 
-  // === Mobile menu ===
-  const mobileBtn = document.getElementById('mobile-btn');
+  // ==========================================
+  // 2. Navbar scroll effect
+  // ==========================================
+  const navbar = document.getElementById('navbar');
+  const handleScroll = () => {
+    if (window.scrollY > 50) {
+      navbar.classList.add('bg-cosmos/95', 'backdrop-blur-xl', 'border-b', 'border-mystic-gold/10', 'shadow-lg');
+    } else {
+      navbar.classList.remove('bg-cosmos/95', 'backdrop-blur-xl', 'border-b', 'border-mystic-gold/10', 'shadow-lg');
+    }
+  };
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  handleScroll();
+
+  // ==========================================
+  // 3. Mobile menu
+  // ==========================================
+  const burger = document.getElementById('burger');
   const mobileMenu = document.getElementById('mobile-menu');
-  mobileBtn.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-    mobileBtn.textContent = mobileMenu.classList.contains('hidden') ? '☰' : '✕';
+  const closeMenu = document.getElementById('close-menu');
+
+  burger.addEventListener('click', () => mobileMenu.classList.add('open'));
+  closeMenu.addEventListener('click', () => mobileMenu.classList.remove('open'));
+  document.querySelectorAll('.mobile-link').forEach(link => {
+    link.addEventListener('click', () => mobileMenu.classList.remove('open'));
   });
-  mobileMenu.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      mobileMenu.classList.add('hidden');
-      mobileBtn.textContent = '☰';
+
+  // ==========================================
+  // 4. FAQ accordion
+  // ==========================================
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const question = item.querySelector('.faq-question');
+    question.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
     });
   });
 
-  // === Navbar scroll ===
-  const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', () => {
-    navbar.classList.toggle('nav-scrolled', window.scrollY > 50);
-  }, { passive: true });
+  // ==========================================
+  // 5. Smooth scroll
+  // ==========================================
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (href === '#' || href.length <= 1) return;
+      const target = document.querySelector(href);
+      if (target) {
+        e.preventDefault();
+        const offset = 80;
+        const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+    });
+  });
 
-  // === Reveal on scroll ===
+  // ==========================================
+  // 6. Pre-filled messages при клике "Заказать"
+  // ==========================================
+  const TELEGRAM_URL = 'https://t.me/managerofdestiny';
+  const WHATSAPP_URL = 'https://wa.me/79062693247';
+
+  document.querySelectorAll('.service-order').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      const service = this.dataset.service;
+      if (!service) return;
+
+      // Сохраняем выбранную услугу, чтобы использовать в мессенджере
+      sessionStorage.setItem('selectedService', service);
+
+      // Скроллим к блоку связи
+      const contactSection = document.getElementById('contact');
+      if (contactSection) {
+        const offset = 80;
+        const top = contactSection.getBoundingClientRect().top + window.pageYOffset - offset;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+
+      // Подсветим кнопки соцсетей после скролла
+      setTimeout(() => {
+        document.querySelectorAll('.social-btn').forEach(btn => {
+          btn.classList.add('animate-pulse-gold');
+          setTimeout(() => btn.classList.remove('animate-pulse-gold'), 3000);
+        });
+      }, 800);
+    });
+  });
+
+  // Обновляем ссылки соцсетей с pre-filled сообщением при наличии выбранной услуги
+  const updateSocialLinks = () => {
+    const service = sessionStorage.getItem('selectedService');
+    if (!service) return;
+
+    const message = `Здравствуйте, Айнура! Хочу заказать услугу: ${service}`;
+    const encoded = encodeURIComponent(message);
+
+    const telegramBtn = document.getElementById('btn-telegram');
+    const whatsappBtn = document.getElementById('btn-whatsapp');
+
+    if (telegramBtn) telegramBtn.href = `${TELEGRAM_URL}?text=${encoded}`;
+    if (whatsappBtn) whatsappBtn.href = `${WHATSAPP_URL}?text=${encoded}`;
+  };
+
+  // Наблюдатель за появлением блока связи — обновляем ссылки
+  const contactObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        updateSocialLinks();
+      }
+    });
+  }, { threshold: 0.1 });
+
+  const contactSection = document.getElementById('contact');
+  if (contactSection) contactObserver.observe(contactSection);
+
+  // Также обновляем сразу при загрузке (если уже есть сохранённая услуга)
+  updateSocialLinks();
+
+  // ==========================================
+  // 7. Scroll reveal animation
+  // ==========================================
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -1355,171 +1256,8 @@
       }
     });
   }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
   document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-
-  // === FAQ accordion ===
-  document.querySelectorAll('.faq-item').forEach(item => {
-    const question = item.querySelector('.faq-question');
-    question.addEventListener('click', () => {
-      const isActive = item.classList.contains('active');
-      // close all
-      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
-      if (!isActive) item.classList.add('active');
-    });
-  });
-
-  // === Phone mask ===
-  const phoneInput = document.querySelector('input[name="phone"]');
-  phoneInput.addEventListener('input', (e) => {
-    let v = e.target.value.replace(/\D/g, '');
-    if (!v) { e.target.value = ''; return; }
-    if (v[0] === '8') v = '7' + v.slice(1);
-    if (v[0] !== '7') v = '7' + v;
-    let f = '+7';
-    if (v.length > 1) f += ' (' + v.slice(1, 4);
-    if (v.length >= 4) f += ') ' + v.slice(4, 7);
-    if (v.length >= 7) f += '-' + v.slice(7, 9);
-    if (v.length >= 9) f += '-' + v.slice(9, 11);
-    e.target.value = f;
-  });
-
-  // === Date max = today ===
-  const dateInput = document.querySelector('input[name="birth_date"]');
-  dateInput.setAttribute('max', new Date().toISOString().split('T')[0]);
-
-  // === Preselect service from anchor ===
-  document.querySelectorAll('.service-cta').forEach(link => {
-    link.addEventListener('click', (e) => {
-      const serviceName = link.dataset.service;
-      if (serviceName) {
-        const select = document.getElementById('service-select');
-        const option = Array.from(select.options).find(opt => opt.value === serviceName);
-        if (option) {
-          setTimeout(() => { select.value = serviceName; }, 300);
-        }
-      }
-    });
-  });
-
-  // === Form validation & submission ===
-  const form = document.getElementById('booking-form');
-  const formSuccess = document.getElementById('form-success');
-  const formError = document.getElementById('form-error');
-  const submitBtn = document.getElementById('submit-btn');
-  const successModal = document.getElementById('success-modal');
-
-  function showError(field, msg) {
-    field.classList.add('error');
-    const errEl = field.parentElement.querySelector('.error-message');
-    if (errEl) errEl.textContent = msg;
-  }
-  function clearError(field) {
-    field.classList.remove('error');
-    const errEl = field.parentElement.querySelector('.error-message');
-    if (errEl) errEl.textContent = '';
-  }
-  function clearAllErrors() {
-    form.querySelectorAll('.form-field').forEach(clearError);
-    formError.classList.add('hidden');
-  }
-
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    clearAllErrors();
-
-    const name = form.querySelector('input[name="name"]');
-    const phone = form.querySelector('input[name="phone"]');
-    const birthDate = form.querySelector('input[name="birth_date"]');
-    const birthPlace = form.querySelector('input[name="birth_place"]');
-    const service = form.querySelector('select[name="service"]');
-    const consent = form.querySelector('input[name="consent"]');
-
-    let valid = true;
-
-    if (!name.value.trim() || name.value.trim().length < 2) {
-      showError(name, 'Укажите ваше имя'); valid = false;
-    }
-    const phoneDigits = phone.value.replace(/\D/g, '');
-    if (phoneDigits.length !== 11) {
-      showError(phone, 'Введите корректный телефон'); valid = false;
-    }
-    if (!birthDate.value) {
-      showError(birthDate, 'Укажите дату рождения'); valid = false;
-    } else if (new Date(birthDate.value) > new Date()) {
-      showError(birthDate, 'Дата не может быть в будущем'); valid = false;
-    }
-    if (!birthPlace.value.trim()) {
-      showError(birthPlace, 'Укажите место рождения'); valid = false;
-    }
-    if (!service.value) {
-      showError(service, 'Выберите услугу'); valid = false;
-    }
-    if (!consent.checked) {
-      consent.parentElement.style.color = '#ff9999';
-      setTimeout(() => consent.parentElement.style.color = '', 3000);
-      valid = false;
-    }
-
-    if (!valid) return;
-
-    // Submit via Formspree
-    submitBtn.disabled = true;
-    submitBtn.innerHTML = '<span class="animate-pulse">✦ Отправка...</span>';
-
-    const formData = new FormData(form);
-    try {
-      const response = await fetch(form.action, {
-        method: 'POST',
-        body: formData,
-        headers: { 'Accept': 'application/json' }
-      });
-
-      if (response.ok) {
-        form.classList.add('hidden');
-        formSuccess.classList.remove('hidden');
-        successModal.classList.add('active');
-        document.body.style.overflow = 'hidden';
-        // Save to localStorage
-        try {
-          const data = Object.fromEntries(formData.entries());
-          data.timestamp = new Date().toISOString();
-          const existing = JSON.parse(localStorage.getItem('destiny_bookings') || '[]');
-          existing.push(data);
-          localStorage.setItem('destiny_bookings', JSON.stringify(existing));
-        } catch (_) {}
-      } else {
-        formError.textContent = 'Ошибка отправки. Попробуйте ещё раз или свяжитесь со мной напрямую.';
-        formError.classList.remove('hidden');
-      }
-    } catch (err) {
-      formError.textContent = 'Проблема с соединением. Проверьте интернет и попробуйте снова.';
-      formError.classList.remove('hidden');
-    } finally {
-      submitBtn.disabled = false;
-      submitBtn.innerHTML = '<span>✦</span><span>Отправить заявку</span>';
-    }
-  });
-
-  // === Reset form ===
-  document.getElementById('reset-form-btn').addEventListener('click', () => {
-    form.reset();
-    form.classList.remove('hidden');
-    formSuccess.classList.add('hidden');
-    clearAllErrors();
-    document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
-  });
-
-  // === Modal close ===
-  document.getElementById('modal-close').addEventListener('click', () => {
-    successModal.classList.remove('active');
-    document.body.style.overflow = '';
-  });
-  successModal.addEventListener('click', (e) => {
-    if (e.target === successModal) {
-      successModal.classList.remove('active');
-      document.body.style.overflow = '';
-    }
-  });
 
 })();
 </script>
